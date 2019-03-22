@@ -1,0 +1,64 @@
+<div *ngIf="addVisible">
+  <form action="Submit" (submit)="save($event)">
+    <dx-button *ngIf="!isDetail" icon="fa fa-ban" text="Cancel" (onClick)="cancel()"></dx-button>
+    <dx-button *ngIf="!isDetail" class="pull-right" icon="fa fa-save" text="Save" validationGroup="roleData" [useSubmitBehavior]="true">
+    </dx-button>
+
+    <!-- class="m-2" => add margin by 0.5rem -->
+    <div class="m-2"></div>
+    <p style="border-top: 1px rgb(196, 196, 196) solid; padding: 0px; margin: 0px;"></p>
+    <div class="m-2"></div>
+
+    <dx-form [(formData)]="role" validationGroup="roleData">
+      <dxi-item itemType="group" [colCount]="2">
+        <dxi-item itemType="group">
+          <!-- <dxi-item name="idorg" dataField="idorg" caption="Id Organisasi" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}">
+            <dxi-validation-rule type="required" message="Id Organisasi is required"></dxi-validation-rule>
+          </dxi-item> -->
+          <dxi-item name="idorg" dataField="idorg" caption="Id" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <dxi-item name="parent_idorg" dataField="parent_idorg" caption="Parent Id" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <dxi-item name="entitas_name" dataField="entitas_name" caption="Nama Entitas" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}" [validationRules]="[{type: 'required', message: 'Keterangan harus diisi' }]"></dxi-item>
+          <dxi-item name="mulai_berlaku" dataField="mulai_berlaku" caption="Mulai Berlaku" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <dxi-item name="akhir_berlaku" dataField="akhir_berlaku" caption="Akhir Berlaku" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <dxi-item name="tahun" dataField="tahun" caption="Tahun" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <dxi-item name="entitas_level" dataField="entitas_level" caption="Level Entitas" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <dxi-item name="description" dataField="description" caption="Deskripsi" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <dxi-item name="idorgt" dataField="idorgt" caption="idorgt" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <dxi-item name="kode_sap" dataField="kode_sap" caption="Kode SAP" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <dxi-item name="sebutan_sap" dataField="sebutan_sap" caption="Sebutan SAP" editorType="dxTextBox" [editorOptions]="{readOnly: isDetail}"></dxi-item>
+          <!-- <dxi-item name="cboAktif" dataField="isallowregistration" helpText="harus diisi" isRequired = "true" editorType="dxSelectBox" [label]="{ text: 'Aktif' }" [editorOptions]="{readOnly: isDetail, dataSource: simpleProducts }" ></dxi-item>
+          <dxi-item name="cboDislay" dataField="isdisplayed" editorType="dxSelectBox" [label]="{ text: 'Display?' }" [editorOptions]="{readOnly: isDetail, items: daftarKategori, displayExpr: 'Nama', valueExpr: 'ID' }" [validationRules]="[{type: 'required', message: 'Display harus dipilih' }]" ></dxi-item> -->
+        </dxi-item>
+        <dxi-item itemType="group">
+          <dxi-item itemType="empty"></dxi-item>
+        </dxi-item>
+      </dxi-item>
+    </dx-form>
+    <br>
+    <p>Menu Access :</p>
+    <dx-tree-list
+      [dataSource]="menuTree"
+      itemsExpr="items"
+      keyExpr="menuId"
+      parentIdExpr="menuParent"
+      [showRowLines]="true"
+      [columnAutoWidth]="true"
+      [rowAlternationEnabled]="true"
+      autoExpandAll="true"
+      (onToolbarPreparing)="toolbarPreparing($event)"
+      (onCellClick)="cellClick($event)"
+      (onRowUpdated)="rowUpdated($event)">
+      <dxo-editing
+        mode="batch"
+        [allowAdding]="false"
+        [allowUpdating]="!isDetail"
+        [allowDeleting]="false">
+      </dxo-editing>
+      <dxi-column dataField="text" caption="Menu" [allowEditing]="false"></dxi-column>
+      <dxi-column dataField="read"></dxi-column>
+      <dxi-column dataField="write"></dxi-column>
+    </dx-tree-list>
+    <app-form-confirmation [isSave]="isSave" [isCancel]="isCancel" [confVisible]="confVisible" (onYesConf)="save()" (onHideConf)="onHideConf()"
+      (onSaveConf)="onSaveConf()" (onCancelConf)="onCancelConf()"></app-form-confirmation>
+  </form>
+</div>
