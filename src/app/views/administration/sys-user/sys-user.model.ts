@@ -52,18 +52,14 @@ export class Search {
     ID: number;
     Nama: string;
   }
-
+  
   export class DaftarRole {
     role_id: number;
     nama: string;
   }
 
-  export class Jabatan {
+  export class DaftarJabatan {
     idpos: string;
     position_title: string;
-    idpost: string;
-    kode_sap: string;
-    sebutan_sap: string;
-    parent_idpos: string;
   }
   

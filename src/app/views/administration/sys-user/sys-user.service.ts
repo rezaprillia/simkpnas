@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { AppConstant } from '../../../app.constant';
-import { SysUser, KategoriAktif, DaftarRole} from './sys-user.model';
+import { SysUser, KategoriAktif, DaftarRole, DaftarJabatan} from './sys-user.model';
 
 const simpleProducts: string[] = [ 'Y', 'N' ];
 const daftarKategori: KategoriAktif[] = [{
@@ -32,6 +32,20 @@ const daftarRole: DaftarRole[] = [{
   'role_id': 2,
   'nama': 'Atasan'
 }];
+
+const daftarJabatan: DaftarJabatan[] = [{
+    'idpos': '1',
+    'position_title' : 'GENERAL MANAGER'
+}, {
+    'idpos' : '2',
+    'position_title' : 'MANAGER'
+}, {
+    'idpos' : '3',
+    'position_title' : 'OFFICER'
+}, {
+    'idpos' : '4',
+    'position_title' : 'SUPERVISOR'
+}]
 
 var arrRoleId = new Array()   ;
 
@@ -56,6 +70,10 @@ export class SysUserService {
 
   getDaftarRole(): DaftarRole[] {
     return daftarRole;
+  }
+
+  getDaftarJabatan(): DaftarJabatan[] {
+    return daftarJabatan;
   }
 
   getById(id: any): Observable<any> {
@@ -146,7 +164,7 @@ export class SysUserService {
     return this.http.get(this.resourceUrlRole + '/table')
   }
 
-  // getAllRoleID(): Observable < any > {
+  // getAllRoleID(): Observable < any >///////////////// {
   //   arrRoleId.push(this.http.get(this.resourceUrlRole + '/table'));
   //   return arrRoleId;
   // }

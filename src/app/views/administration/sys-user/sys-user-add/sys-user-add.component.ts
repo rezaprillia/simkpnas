@@ -24,7 +24,7 @@ import {
 import {SysUserService} from '../sys-user.service';
 // import { AddRoleService } from './role-add.service';
 
-import {Menu, SysUser, KategoriAktif, DaftarRole} from '../sys-user.model';
+import {Menu, SysUser, KategoriAktif, DaftarRole, DaftarJabatan} from '../sys-user.model';
 import notify from 'devextreme/ui/notify';
 import {DxTreeListComponent, DxValidatorModule, DxValidationSummaryModule, DxFormComponent} from 'devextreme-angular';
 import { DxiItemComponent } from 'devextreme-angular/ui/nested/item-dxi';
@@ -51,6 +51,7 @@ import { DxiItemComponent } from 'devextreme-angular/ui/nested/item-dxi';
    jabatans: any;
    daftarKategori: KategoriAktif[];
    daftarRole: DaftarRole[];
+   daftarJabatan: DaftarJabatan[];
    // cekAktif: boolean;
    previousValue: boolean;
    newValue: boolean;
@@ -73,7 +74,7 @@ import { DxiItemComponent } from 'devextreme-angular/ui/nested/item-dxi';
      this.simpleProducts = sysUserService.getSimpleProducts();
      this.daftarKategori = sysUserService.getDaftarKategori();
      this.daftarRole = sysUserService.getDaftarRole();
-     this.jabatans = sysUserService.getAllJabatan();
+     this.daftarJabatan = sysUserService.getDaftarJabatan();
      this.user = {
       userid: null,
       username: '',
