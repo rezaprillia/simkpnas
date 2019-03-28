@@ -38,10 +38,7 @@
     "core-js": "^2.6.1",
     "devextreme": "^18.2.3",
     "devextreme-angular": "^18.2.3",
-<<<<<<< HEAD
-=======
     "file-saver": "^2.0.1",
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
     "font-awesome": "^4.7.0",
     "moment": "^2.22.1",
     "ng2-charts": "1.6.0",
@@ -52,24 +49,12 @@
     "sockjs-client": "^1.3.0",
     "stompjs": "^2.3.3",
     "ts-helpers": "1.1.2",
-<<<<<<< HEAD
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.11.4",
     "@angular/cli": "^7.1.4",
     "@angular/compiler-cli": "^7.1.4",
-=======
-    "ts-xlsx": "0.0.11",
-    "xlsx": "^0.14.1",
-    "xlsx-parse-json": "^3.0.1",
-    "zone.js": "^0.8.26"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.5",
-    "@angular/cli": "^7.1.4",
-    "@angular/compiler-cli": "^7.2.8",
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
     "@types/jasmine": "^3.3.4",
     "@types/node": "^10.12.18",
     "codelyzer": "^4.5.0",
@@ -83,8 +68,12 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "protractor": "^5.4.1",
     "ts-node": "3.3.0",
+    "ts-xlsx": "0.0.11",
     "tslint": "^5.12.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.1",
+    "xlsx": "^0.14.1",
+    "xlsx-parse-json": "^3.0.1",
+    "zone.js": "^0.8.26"
   },
   "engines": {
     "node": ">= 6.9.0",

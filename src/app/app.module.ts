@@ -11,10 +11,7 @@ import { AppComponent } from './app.component';
 
 import { AuthGuard } from './security/auth.guard';
 import { TokenInterceptor } from './security/token.interceptor';
-<<<<<<< HEAD
-=======
 import { UploadComponent } from 'app/views/upload/upload.component'
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 
 // Import containers
 import {
@@ -117,12 +114,8 @@ export function HttpLoaderFactory(http) {
     AppComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
-<<<<<<< HEAD
-    ...APP_DIRECTIVES
-=======
     ...APP_DIRECTIVES,
     UploadComponent
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
   ],
   providers: [
     AuthGuard,

@@ -8,12 +8,9 @@ import { SysMenuComponent } from './sys-menu/sys-menu.component';
 import { VisiComponent } from './visi/visi.component';
 import { MisiComponent } from './misi/misi.component';
 import { RolemenuComponent } from './rolemenu/rolemenu.component';
-<<<<<<< HEAD
 import { OrganisasiComponent } from './organisasi/organisasi.component';
 import { SysUserComponent } from './sys-user/sys-user.component';
 import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi.component';
-=======
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 
 const routes: Routes = [
   {
@@ -28,7 +25,6 @@ const routes: Routes = [
         data: {
           title: 'Master Asset'
         }
-<<<<<<< HEAD
       }, 
       // {
       //   path: 'users',
@@ -38,15 +34,12 @@ const routes: Routes = [
       //   }
       // }, 
       {
-=======
-      }, {
         path: 'users',
         component: UserComponent,
         data: {
           title: 'Users'
         }
       }, {
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
         path: 'role',
         component: RoleComponent,
         data: {
@@ -61,7 +54,6 @@ const routes: Routes = [
         }
       },
       {
-<<<<<<< HEAD
         path: 'users',
         component: SysUserComponent,
         data: {
@@ -69,8 +61,6 @@ const routes: Routes = [
         }
       },
       {
-=======
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
         path: 'visi',
         component: VisiComponent,
         data: {
@@ -91,7 +81,6 @@ const routes: Routes = [
           title: 'Role Menu Auth'
         }
       },
-<<<<<<< HEAD
       {
         path: 'organisasi',
         component: OrganisasiComponent,
@@ -106,8 +95,6 @@ const routes: Routes = [
           title: 'Posisi Organisasi'
         }
       },
-=======
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
     ]
   }
 ];

@@ -9,10 +9,7 @@ import {
 } from './containers';
 import { ExecutiveComponent } from 'app/views/dashboard/executive/executive.component';
 import { MonitoringComponent } from 'app/views/dashboard/monitoring/monitoring.component';
-<<<<<<< HEAD
-=======
 import { UploadComponent } from 'app/views/upload/upload.component';
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 
 export const routes: Routes = [
   {
@@ -117,15 +114,12 @@ export const routes: Routes = [
         path: 'notification',
         loadChildren: './views/notification/notification.module#NotificationModule',
         canActivate: [AuthGuard]
-<<<<<<< HEAD
-=======
-      },
-      {
-        path: 'upload',
-        component: UploadComponent,
-        canActivate: [AuthGuard]
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
       }
+      // {
+      //   path: 'upload',
+      //   component: UploadComponent,
+      //   canActivate: [AuthGuard]
+      // }
     ]
   },
   {
