@@ -5,7 +5,11 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class Service {
+<<<<<<< HEAD
     private resourceUrlRole = this.a.SERVER_URL + '/user_role';
+=======
+    private resourceUrlRole = this.a.SERVER_URL + '/system/UserRole';
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
     constructor(private http: HttpClient, private a: AppConstant) { }
      getAllRole(): Observable<any> {
         return this.http.get(this.resourceUrlRole)

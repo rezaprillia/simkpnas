@@ -13,11 +13,15 @@ import {
 import {
   TranslateModule
 } from '@ngx-translate/core';
+<<<<<<< HEAD
 import { OrganisasiComponent } from './organisasi/organisasi.component';
 // import { AddOrganisasiComponent } from './organisasi/Add/organisasi-add.component';
 import { AddOrganisasi } from './organisasi/Add/organisasi-add.component';
 import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi.component';
 import { PosisiAddComponent } from './posisi-organisasi/posisi-add/posisi-add.component'
+=======
+
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
 import {
   DxButtonModule,
   DxDataGridComponent,
@@ -56,6 +60,7 @@ import {
   TabComponent
 } from './template/tab/tab.component';
 import {
+<<<<<<< HEAD
   CompanyComponent
 } from './company/company.component';
 import {
@@ -68,6 +73,8 @@ import {
   CompanyAddComponent
 } from './company/add/company-add.component';
 import {
+=======
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
   SiteComponent
 } from './site/site.component';
 import {AddSiteComponent} from './site/add/add.component'
@@ -78,6 +85,17 @@ import {
   SharedModule
 } from '../shared/shared.module';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
+<<<<<<< HEAD
+=======
+import { OrgTypeComponent } from './orgtype/orgtype.component';
+import { AddOrgTypeComponent } from './orgtype/add/add.component';
+import { PositionComponent } from './position/position.component';
+import { PositionAddComponent } from './position/position-add/position-add.component';
+import { PositionTypeComponent } from './positiontype/positiontype.component';
+import { PositionTypeAddComponent } from './positiontype/add/positiontype-add.component';
+import { CompanyComponent } from './company/company.component';
+import { CompanyAddComponent } from './company/company-add/company-add.component';
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
 
 @NgModule({
   imports: [
@@ -104,20 +122,34 @@ import { importExpr } from '@angular/compiler/src/output/output_ast';
   declarations: [
     TableComponent,
     FormComponent,
+<<<<<<< HEAD
     CompanyComponent,
     DetailCompanyComponent,
     CompanyEditComponent,
     CompanyAddComponent,
+=======
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
     SiteComponent,
     AddSiteComponent,
     DetailComponent,
     SubstationComponent,
     TemplateComponent,
     TabComponent,
+<<<<<<< HEAD
     OrganisasiComponent,
     AddOrganisasi,
     PosisiOrganisasiComponent,
     PosisiAddComponent
+=======
+    OrgTypeComponent,
+    AddOrgTypeComponent,
+    PositionComponent,
+    PositionAddComponent,
+    PositionTypeComponent,
+    PositionTypeAddComponent,
+    CompanyComponent,
+    CompanyAddComponent,
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
   ],
   exports: [
     TabComponent

@@ -8,6 +8,12 @@ import { SysMenuComponent } from './sys-menu/sys-menu.component';
 import { VisiComponent } from './visi/visi.component';
 import { MisiComponent } from './misi/misi.component';
 import { RolemenuComponent } from './rolemenu/rolemenu.component';
+<<<<<<< HEAD
+=======
+import { OrganisasiComponent } from './organisasi/organisasi.component';
+import { SysUserComponent } from './sys-user/sys-user.component';
+import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi.component';
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
 
 const routes: Routes = [
   {
@@ -22,6 +28,7 @@ const routes: Routes = [
         data: {
           title: 'Master Asset'
         }
+<<<<<<< HEAD
       }, {
         path: 'users',
         component: UserComponent,
@@ -29,6 +36,17 @@ const routes: Routes = [
           title: 'Users'
         }
       }, {
+=======
+      }, 
+      // {
+      //   path: 'users',
+      //   component: UserComponent,
+      //   data: {
+      //     title: 'Users'
+      //   }
+      // }, 
+      {
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
         path: 'role',
         component: RoleComponent,
         data: {
@@ -43,6 +61,16 @@ const routes: Routes = [
         }
       },
       {
+<<<<<<< HEAD
+=======
+        path: 'users',
+        component: SysUserComponent,
+        data: {
+          title: 'User'
+        }
+      },
+      {
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
         path: 'visi',
         component: VisiComponent,
         data: {
@@ -63,6 +91,23 @@ const routes: Routes = [
           title: 'Role Menu Auth'
         }
       },
+<<<<<<< HEAD
+=======
+      {
+        path: 'organisasi',
+        component: OrganisasiComponent,
+        data: {
+          title: 'Menu Organisasi'
+        }
+      },
+      {
+        path: 'posisi-organisasi',
+        component: PosisiOrganisasiComponent,
+        data: {
+          title: 'Posisi Organisasi'
+        }
+      },
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
     ]
   }
 ];

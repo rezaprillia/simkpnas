@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
+<<<<<<< HEAD
 import { SubstationComponent } from './substation/substation.component';
 import { TemplateComponent } from './template/template.component';
 import { TabComponent } from './template/tab/tab.component';
@@ -12,6 +13,17 @@ import { OrganisasiComponent } from './organisasi/organisasi.component';
 import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi.component'
 
 import { SiteComponent } from './site/site.component';
+=======
+import { OrgTypeComponent } from './orgtype/orgtype.component';
+import { PositionTypeComponent } from './positiontype/positiontype.component';
+import { PositionComponent } from './position/position.component';
+import { SubstationComponent } from './substation/substation.component';
+import { TemplateComponent } from './template/template.component';
+import { TabComponent } from './template/tab/tab.component';
+import { AddOrgTypeComponent } from './orgtype/add/add.component';
+import { SiteComponent } from './site/site.component';
+import { CompanyComponent } from './company/company.component';
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
 
 const routes: Routes = [
   {
@@ -35,6 +47,7 @@ const routes: Routes = [
         }
       },
       {
+<<<<<<< HEAD
         path: 'company',
         component: CompanyComponent,
         data: {
@@ -55,6 +68,49 @@ const routes: Routes = [
           title: 'Company Add'
         }
       },
+=======
+        path: 'orgtype',
+        component: OrgTypeComponent,
+        data: {
+          title: 'Organization Type'
+        }
+      },
+      {
+        path: 'postype',
+        component: PositionTypeComponent,
+        data: {
+          title: 'Position Type'
+        }
+      },
+      {
+        path: 'position',
+        component: PositionComponent,
+        data: {
+          title: 'Position'
+        }
+      },
+      {
+        path: 'company',
+        component: CompanyComponent,
+        data: {
+          title: 'Company'
+        }
+      },
+      // {
+      //   path: 'company/edit/:id',
+      //   component: CompanyEditComponent,
+      //   data: {
+      //     title: 'Company Edit'
+      //   }
+      // },
+      // {
+      //   path: 'company/add',
+      //   component: CompanyAddComponent,
+      //   data: {
+      //     title: 'Company Add'
+      //   }
+      // },
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
       {
         path: 'site',
         component: SiteComponent,
@@ -82,6 +138,7 @@ const routes: Routes = [
         data: {
           title: 'Tab'
         }
+<<<<<<< HEAD
       },
       
       {
@@ -98,6 +155,9 @@ const routes: Routes = [
           title: 'Posisi Organisasi'
         }
       },
+=======
+      }
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
     ]
   }
 ];

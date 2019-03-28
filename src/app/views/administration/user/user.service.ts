@@ -7,9 +7,15 @@ import { User } from 'app/views/administration/user/user.model';
 @Injectable()
 export class UserService {
   // private resourceUrlUser = this.a.SERVER_URL + '/user_tab';
+<<<<<<< HEAD
   private resourceUrlUser = this.a.SERVER_URL + '/system/user/table';
   private resourceUrlSite = this.a.SERVER_URL + '/site';
   private resourceUrlRole = this.a.SERVER_URL + '/user_role';
+=======
+  private resourceUrlUser = this.a.SERVER_URL + '/system/User';
+  private resourceUrlSite = this.a.SERVER_URL + '/site';
+  private resourceUrlRole = this.a.SERVER_URL + '/system/UserRole';
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
   private resourceUrlSiteChild = this.a.SERVER_URL + '/site_child';
   private resourceUrlLanguage = this.a.SERVER_URL + '/menu_language';
   private resourceUrlLocation = this.a.SERVER_URL + '/location_type';
@@ -17,7 +23,14 @@ export class UserService {
   private resourceUrlCompany = this.a.SERVER_URL + '/company';
   private resourceUrlSiteCodeExist = this.a.SERVER_URL + '/site/filter?search=siteCodeExist:'
 
+<<<<<<< HEAD
   constructor(private http: HttpClient, private a: AppConstant) {}
+=======
+  constructor(private http: HttpClient, private a: AppConstant) {
+
+  }
+  
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
   delete(data: any): Observable < any > {
     data.status = 'D';
     data.activationCode = 'N';

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export class Company {
     constructor(
         public id: string,
@@ -25,3 +26,37 @@ export class Company {
         public appendix: string
     ) { }
 }
+=======
+export class Search {
+    company_code: string;
+    nama_kantor: string;
+    website: string;
+  }
+  
+  export class Company {
+    company_code: string;
+    nama_kantor: string;
+    npwp: string;
+    website: string;
+    email: string;
+    no_telp: string;
+    fax: string;
+    alamat: string;
+    propinsi: string;
+    kota: string;
+    kecamatan: string;
+    kelurahan: string;
+    kodepos: string;
+  }
+  
+  export class Menu {
+    authId?: string;
+    menuParent?: string;
+    menuId: string;
+    read: any;
+    write: any;
+    text: string;
+    items?: Menu[];
+  }
+  
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
