@@ -79,7 +79,8 @@ export class OrgTypeComponent implements AfterViewInit {
   minLimitShow = 1;
   maxLimitShow = 10;
   activeClass = 5;
-
+  searchText;
+  
   constructor(
     private elementRef: ElementRef,
     @Inject(OrgTypeService) private roleService: OrgTypeService

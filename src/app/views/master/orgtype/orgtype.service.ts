@@ -91,7 +91,7 @@ export class OrgTypeService {
   }
 
   getByName(type_name: any): Observable<any> {
-    return this.http.get(this.resourceUrlOrgType + '/filter?search=type_name:' + type_name.toString().toUpperCase());
+    return this.http.get(this.resourceUrlOrgType + '/retrieve?search=type_name:' + type_name.toString().toUpperCase());
   }
 
   saveRoleAuth(data: any) {
