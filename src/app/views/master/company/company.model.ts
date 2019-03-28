@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 export class Company {
     constructor(
         public id: string,
@@ -27,6 +28,8 @@ export class Company {
     ) { }
 }
 =======
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 export class Search {
     company_code: string;
     nama_kantor: string;
@@ -58,5 +61,9 @@ export class Search {
     text: string;
     items?: Menu[];
   }
+<<<<<<< HEAD
   
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+  
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92

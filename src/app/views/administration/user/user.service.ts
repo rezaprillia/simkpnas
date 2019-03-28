@@ -8,6 +8,7 @@ import { User } from 'app/views/administration/user/user.model';
 export class UserService {
   // private resourceUrlUser = this.a.SERVER_URL + '/user_tab';
 <<<<<<< HEAD
+<<<<<<< HEAD
   private resourceUrlUser = this.a.SERVER_URL + '/system/user/table';
   private resourceUrlSite = this.a.SERVER_URL + '/site';
   private resourceUrlRole = this.a.SERVER_URL + '/user_role';
@@ -16,6 +17,11 @@ export class UserService {
   private resourceUrlSite = this.a.SERVER_URL + '/site';
   private resourceUrlRole = this.a.SERVER_URL + '/system/UserRole';
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+  private resourceUrlUser = this.a.SERVER_URL + '/system/User';
+  private resourceUrlSite = this.a.SERVER_URL + '/site';
+  private resourceUrlRole = this.a.SERVER_URL + '/system/UserRole';
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
   private resourceUrlSiteChild = this.a.SERVER_URL + '/site_child';
   private resourceUrlLanguage = this.a.SERVER_URL + '/menu_language';
   private resourceUrlLocation = this.a.SERVER_URL + '/location_type';
@@ -24,6 +30,7 @@ export class UserService {
   private resourceUrlSiteCodeExist = this.a.SERVER_URL + '/site/filter?search=siteCodeExist:'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   constructor(private http: HttpClient, private a: AppConstant) {}
 =======
   constructor(private http: HttpClient, private a: AppConstant) {
@@ -31,6 +38,10 @@ export class UserService {
   }
   
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+  constructor(private http: HttpClient, private a: AppConstant) {}
+
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
   delete(data: any): Observable < any > {
     data.status = 'D';
     data.activationCode = 'N';

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Component, Inject, ViewChild } from '@angular/core';
 import { CompanyService} from './company.service';
 import { error } from 'selenium-webdriver';
@@ -32,6 +33,8 @@ export class CompanyComponent {
   detail: any;
   details: any;
 =======
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 // import { Component, OnInit } from '@angular/core';
 
 // @Component({
@@ -71,13 +74,17 @@ export class CompanyComponent implements AfterViewInit {
   addVisible = false;
   menuVisible = false;
   detail: any;
+<<<<<<< HEAD
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
   text: any;
   popupVisible = false;
   confVisible = false;
   progressVisible = false;
   progressTitle: any;
   progressContent: any;
+<<<<<<< HEAD
 <<<<<<< HEAD
   isCancel = false;
   isDetail = false;
@@ -114,6 +121,8 @@ export class CompanyComponent implements AfterViewInit {
         return service.update(key.id, values).toPromise();
       },
 =======
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 
   // roles: any[];
   gridDataSource: any = {};
@@ -360,11 +369,15 @@ export class CompanyComponent implements AfterViewInit {
       } else {
         this.gridDataSource = resp.filter(data => data.activationCode === 'Y');
       }
+<<<<<<< HEAD
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
     });
   }
 
   showMenu(event): void {
+<<<<<<< HEAD
 <<<<<<< HEAD
     console.log('event : ', event);
     this.target = event;
@@ -439,6 +452,8 @@ export class CompanyComponent implements AfterViewInit {
     this.isDelete = false;
     this.confVisible = false;
 =======
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
     this.target = event;
     this.menuVisible = true;
     this.detail = this.gridDataSource.filter(dataSource => dataSource.id === event)[0];
@@ -481,7 +496,10 @@ export class CompanyComponent implements AfterViewInit {
     this.isDelete = false;
     this.refresh();
     // this.getRoleData();
+<<<<<<< HEAD
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
   }
 
   onHideProgress() {
@@ -489,10 +507,13 @@ export class CompanyComponent implements AfterViewInit {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   onHideMenu() {
     this.menuVisible = false;
   }
 =======
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
   onHideAdd() {
     this.addVisible = false;
     this.isAdd = false;
@@ -538,5 +559,8 @@ export class CompanyComponent implements AfterViewInit {
     })
   }
   onCancelConf() {}
+<<<<<<< HEAD
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 }

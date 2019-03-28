@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { SubstationComponent } from './substation/substation.component';
 import { TemplateComponent } from './template/template.component';
 import { TabComponent } from './template/tab/tab.component';
@@ -25,6 +26,21 @@ import { SiteComponent } from './site/site.component';
 import { CompanyComponent } from './company/company.component';
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
 
+=======
+import { OrgTypeComponent } from './orgtype/orgtype.component';
+import { PositionTypeComponent } from './positiontype/positiontype.component';
+import { PositionComponent } from './position/position.component';
+import { SubstationComponent } from './substation/substation.component';
+import { TemplateComponent } from './template/template.component';
+import { TabComponent } from './template/tab/tab.component';
+import { AddOrgTypeComponent } from './orgtype/add/add.component';
+import { SiteComponent } from './site/site.component';
+import { CompanyComponent } from './company/company.component';
+import { CompanyAddComponent } from './company/company-add/company-add.component';
+import { OrganisasiComponent } from './organisasi/organisasi.component';
+import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi.component'
+
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 const routes: Routes = [
   {
     path: '',
@@ -48,6 +64,7 @@ const routes: Routes = [
       },
       {
 <<<<<<< HEAD
+<<<<<<< HEAD
         path: 'company',
         component: CompanyComponent,
         data: {
@@ -69,6 +86,8 @@ const routes: Routes = [
         }
       },
 =======
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
         path: 'orgtype',
         component: OrgTypeComponent,
         data: {
@@ -110,7 +129,10 @@ const routes: Routes = [
       //     title: 'Company Add'
       //   }
       // },
+<<<<<<< HEAD
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
       {
         path: 'site',
         component: SiteComponent,
@@ -139,8 +161,10 @@ const routes: Routes = [
           title: 'Tab'
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
       },
-      
       {
         path: 'organisasi',
         component: OrganisasiComponent,
@@ -154,10 +178,14 @@ const routes: Routes = [
         data: {
           title: 'Posisi Organisasi'
         }
+<<<<<<< HEAD
       },
 =======
       }
 >>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+      }
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
     ]
   }
 ];
