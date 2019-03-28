@@ -75,5 +75,8 @@ export class AuthenticationService {
         token : token
       });
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 }

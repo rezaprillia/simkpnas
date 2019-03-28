@@ -48,7 +48,11 @@ import {
 import { RoleComponent } from './role/role.component';
 import { UserComponent } from './user/user.component';
 import { AddUserComponent } from 'app/views/administration/user/add/user-add.component';
+<<<<<<< HEAD
 import {AddRoleComponent} from './role/add/role-add.component';
+=======
+import { AddRoleComponent } from './role/add/role-add.component';
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 import { AddAssetBrandComponent } from 'app/views/administration/master_asset/add_assetbrand/brand-add.component';
 import { AddManufactureComponent } from 'app/views/administration/master_asset/add_manufacture/manufacture-add.component';
 import { AddTypeComponent } from 'app/views/administration/master_asset/add_type/type-add.component';
@@ -60,6 +64,7 @@ import { AddVisiComponent } from './visi/add/visi-add.component';
 import { MisiComponent } from './misi/misi.component';
 import { RolemenuComponent } from './rolemenu/rolemenu.component';
 import { AddRolemenuComponent } from './rolemenu/add/rolemenu-add.component';
+<<<<<<< HEAD
 import { OrganisasiComponent } from './organisasi/organisasi.component';
 // import { AddOrganisasiComponent } from './organisasi/Add/organisasi-add.component';
 import { AddOrganisasiComponent } from './organisasi/Add/organisasi-add.component';
@@ -67,6 +72,9 @@ import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi
 import { SysUserComponent } from './sys-user/sys-user.component';
 import { SysUserAddComponent } from './sys-user/sys-user-add/sys-user-add.component';
 import { DetailSysUserComponent } from './sys-user/sys-user-detail/sys-user-detail.component';
+=======
+
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 
 @NgModule({
   imports: [
@@ -111,12 +119,15 @@ import { DetailSysUserComponent } from './sys-user/sys-user-detail/sys-user-deta
     MisiComponent,
     RolemenuComponent,
     AddRolemenuComponent,
+<<<<<<< HEAD
     OrganisasiComponent,
     AddOrganisasiComponent,
     PosisiOrganisasiComponent,
     SysUserComponent,
     SysUserAddComponent,
     DetailSysUserComponent
+=======
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
   ],
   exports: [
   ],

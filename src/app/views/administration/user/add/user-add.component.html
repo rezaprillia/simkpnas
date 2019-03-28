@@ -17,7 +17,11 @@
               <dx-button icon="search" (onClick)="showInfo()"></dx-button>
             </dxi-item>
           </dxi-item>
+<<<<<<< HEAD
           <dxi-item dataField="roleId" editorType="dxSelectBox" [editorOptions]="{items: roles, value:'', displayExpr: 'nama', valueExpr: 'role_id'}">            
+=======
+          <dxi-item dataField="roleId" editorType="dxSelectBox" [editorOptions]="{items: roles, value:'', displayExpr: 'roleName', valueExpr: 'id'}">            
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
             <dxo-label text="User Role"></dxo-label>
             <dxi-validation-rule type="required" message="User Role is required"></dxi-validation-rule>
           </dxi-item>

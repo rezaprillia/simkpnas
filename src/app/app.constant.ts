@@ -17,8 +17,13 @@ export class AppConstant {
       // this.SERVER_URL = 'http://10.14.153.41:1366';
       // this.SERVER_URL = 'http://localhost:1366';
       // icofr
+<<<<<<< HEAD
       this.SERVER_URL = 'http://localhost:9092';
       //
+=======
+      // this.SERVER_URL = 'http://10.14.22.209:8080/simkp-webservice';
+      this.SERVER_URL = 'http://localhost:9092';  //server local
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
     } else {
       this.SERVER_URL = document.location.protocol + '//' +
         document.location.hostname + ':' +

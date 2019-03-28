@@ -1,35 +1,46 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { AppConstant } from '../../../app.constant';
-=======
-import { HttpClient } from '@angular/common/http';
-import { AppConstant } from './../../../app.constant';
-import { Observable } from 'rxjs/Observable';
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
-import { Company } from './company.model';
+import { Role, KategoriAktif } from './organisasi.model';
+
+const simpleProducts: string[] = [ 'Y', 'N' ];
+
+const daftarKategori: KategoriAktif[] = [{
+  'ID': 0,
+  'Nama': 'Non-Aktif'
+}, {
+  'ID': 1,
+  'Nama': 'Aktif'
+}];
 
 @Injectable()
-export class CompanyService {
-<<<<<<< HEAD
-  private resourceUrlCompany = this.a.SERVER_URL + '/master/Company';
+export class OrganisasiService {
+  private resourceUrlVisi = this.a.SERVER_URL + '/system/MasterOrganization';
   private resourceUrlRoleAuth = this.a.SERVER_URL + '/role_menu_authorization';
   private resourceUrlMenu = this.a.SERVER_URL + '/menu_tab';
 
   constructor(private http: HttpClient, private a: AppConstant) {}
 
+  getSimpleProducts(): string[] {
+    return simpleProducts;
+  }
+
+  getDaftarKategori(): KategoriAktif[] {
+    return daftarKategori;
+  }
+
   getById(id: any): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(this.resourceUrlCompany + '/retrieve?token=' + token + '&company_code=' + "'" + id + "'")
+    return this.http.get(this.resourceUrlVisi + '/retrieve?token=' + token + '&idorg=' + "'"+id+"'")
   }
 
   getLimit(offset,limit): Observable<any> {
     offset = Number(offset)*Number(limit);
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
-    console.log(this.resourceUrlCompany + '/table?offset=' + offset + '&limit='+limit);
-    return this.http.post < any > (this.resourceUrlCompany+'/table?offset='+offset+'&limit='+limit, {
+    console.log(this.resourceUrlVisi + '/table?offset=' + offset + '&limit='+limit);
+    return this.http.post < any > (this.resourceUrlVisi+'/table?offset='+offset+'&limit='+limit, {
       username : username,
       token : token
     })
@@ -38,23 +49,24 @@ export class CompanyService {
   getAll(): Observable<any> {
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
-    return this.http.post < any > (this.resourceUrlCompany + '/table', {
+    return this.http.post < any > (this.resourceUrlVisi + '/table', {
       username : username,
       token : token
     })
   }
 
-  save(data: Company): Observable<any> {
+  save(data: Role): Observable<any> {
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
     const today = new Date().toISOString().slice(0, 10);
     // data.createdate = today;
     // data.createdby = username;
     // data.isallowregistration = 1;
-    return this.http.post < any > (this.resourceUrlCompany + '/insert', data)
+    console.log(data);
+    return this.http.post < any > (this.resourceUrlVisi + '/insert', data)
   }
 
-  update(data: Company): Observable<any> {
+  update(data: Role): Observable<any> {
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
     const today = new Date().toISOString().slice(0, 10);
@@ -69,18 +81,18 @@ export class CompanyService {
       data.isallowregistration = '0';
     }
     */
-    return this.http.post < any > (this.resourceUrlCompany + '/update', data)
+    return this.http.post < any > (this.resourceUrlVisi + '/update', data)
   }
 
   delete(data: any): Observable<any> {
     /* data.activationCode = 'N';
     return this.http.put(this.resourceUrlRole + '/' + data.role_id, data)*/
     const token = localStorage.getItem('token');
-    return this.http.get(this.resourceUrlCompany + '/delete?token=' + token + '&company_code=' + data.company_code)
+    return this.http.get(this.resourceUrlVisi + '/delete?token=' + token + '&idorg=' + data.idorg)
   }
 
   getByName(roleName: any): Observable<any> {
-    return this.http.get(this.resourceUrlCompany + '/filter?search=roleName:' + roleName.toString().toUpperCase());
+    return this.http.get(this.resourceUrlVisi + '/filter?search=roleName:' + roleName.toString().toUpperCase());
   }
 
   saveRoleAuth(data: any) {
@@ -92,7 +104,7 @@ export class CompanyService {
   }
 
   getByData(data: any): Observable<any> {
-    return this.http.get(this.resourceUrlCompany +
+    return this.http.get(this.resourceUrlVisi +
       '/filter?search=id:' + data.id +
       ',roleName:' + data.roleName.toString().toUpperCase() +
       ',description:' + data.description
@@ -110,38 +122,4 @@ export class CompanyService {
   deleteRoleAuth(id: any): Observable<any> {
     return this.http.delete(this.resourceUrlRoleAuth + '/' + id)
   }
-=======
-
-    private resourceUrl = this.a.SERVER_URL + '/company';
-    private resourceUrlPaging = this.a.SERVER_URL + '/company/page/0/size/20';
-
-    constructor(private http: HttpClient, private a: AppConstant) { }
-
-    getAll(): Observable<any> {
-        return this.http.get(this.resourceUrl + '/filter?search=activationCode!N');
-    }
-
-    save(company: Company): Observable<any> {
-        console.log('company : ', company);
-        return this.http.post(this.resourceUrl, company);
-        // return null;
-    }
-
-    update(id: any, company: Company): Observable<any> {
-        return this.http.put(this.resourceUrl + '/' + id, company);
-    }
-
-    delete(data: any): Observable<any> {
-        data.activationCode = 'N';
-        return this.http.put(this.resourceUrl + '/' + data.id, data)
-    }
-
-    getAllDropDown(): Observable<any> {
-        return this.http.get(this.resourceUrl + '/dropdown');
-    }
-
-    getById(id: any): Observable<any> {
-        return this.http.get(this.resourceUrl + '/' + id);
-    }
->>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 }

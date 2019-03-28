@@ -13,7 +13,15 @@ import {
 import {
   TranslateModule
 } from '@ngx-translate/core';
+<<<<<<< HEAD
 
+=======
+import { OrganisasiComponent } from './organisasi/organisasi.component';
+// import { AddOrganisasiComponent } from './organisasi/Add/organisasi-add.component';
+import { AddOrganisasi } from './organisasi/Add/organisasi-add.component';
+import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi.component';
+import { PosisiAddComponent } from './posisi-organisasi/posisi-add/posisi-add.component'
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 import {
   DxButtonModule,
   DxDataGridComponent,
@@ -52,6 +60,21 @@ import {
   TabComponent
 } from './template/tab/tab.component';
 import {
+<<<<<<< HEAD
+=======
+  CompanyComponent
+} from './company/company.component';
+import {
+  DetailCompanyComponent
+} from './company/detail/detail.component';
+import {
+  CompanyEditComponent
+} from './company/edit/company-edit.component';
+import {
+  CompanyAddComponent
+} from './company/add/company-add.component';
+import {
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
   SiteComponent
 } from './site/site.component';
 import {AddSiteComponent} from './site/add/add.component'
@@ -62,6 +85,7 @@ import {
   SharedModule
 } from '../shared/shared.module';
 import { importExpr } from '@angular/compiler/src/output/output_ast';
+<<<<<<< HEAD
 import { OrgTypeComponent } from './orgtype/orgtype.component';
 import { AddOrgTypeComponent } from './orgtype/add/add.component';
 import { PositionComponent } from './position/position.component';
@@ -70,6 +94,8 @@ import { PositionTypeComponent } from './positiontype/positiontype.component';
 import { PositionTypeAddComponent } from './positiontype/add/positiontype-add.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanyAddComponent } from './company/company-add/company-add.component';
+=======
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 
 @NgModule({
   imports: [
@@ -96,12 +122,20 @@ import { CompanyAddComponent } from './company/company-add/company-add.component
   declarations: [
     TableComponent,
     FormComponent,
+<<<<<<< HEAD
+=======
+    CompanyComponent,
+    DetailCompanyComponent,
+    CompanyEditComponent,
+    CompanyAddComponent,
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
     SiteComponent,
     AddSiteComponent,
     DetailComponent,
     SubstationComponent,
     TemplateComponent,
     TabComponent,
+<<<<<<< HEAD
     OrgTypeComponent,
     AddOrgTypeComponent,
     PositionComponent,
@@ -110,6 +144,12 @@ import { CompanyAddComponent } from './company/company-add/company-add.component
     PositionTypeAddComponent,
     CompanyComponent,
     CompanyAddComponent,
+=======
+    OrganisasiComponent,
+    AddOrganisasi,
+    PosisiOrganisasiComponent,
+    PosisiAddComponent
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
   ],
   exports: [
     TabComponent

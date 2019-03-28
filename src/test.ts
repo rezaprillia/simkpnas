@@ -6,6 +6,10 @@ import 'zone.js/dist/sync-test';
 import 'zone.js/dist/jasmine-patch';
 import 'zone.js/dist/async-test';
 import 'zone.js/dist/fake-async-test';
+<<<<<<< HEAD
+=======
+import 'zone.js/dist/zone-testing';
+>>>>>>> 9f58f0cb1ca73e41521d7ec01116525489274e1b
 import { getTestBed } from '@angular/core/testing';
 import {
   BrowserDynamicTestingModule,
