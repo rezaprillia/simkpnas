@@ -38,14 +38,8 @@
     "core-js": "^2.6.1",
     "devextreme": "^18.2.3",
     "devextreme-angular": "^18.2.3",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "file-saver": "^2.0.1",
-=======
->>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
-=======
     "file-saver": "^2.0.1",
->>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
     "font-awesome": "^4.7.0",
     "moment": "^2.22.1",
     "ng2-charts": "1.6.0",
@@ -56,8 +50,6 @@
     "sockjs-client": "^1.3.0",
     "stompjs": "^2.3.3",
     "ts-helpers": "1.1.2",
-<<<<<<< HEAD
-<<<<<<< HEAD
     "ts-xlsx": "0.0.11",
     "xlsx": "^0.14.1",
     "xlsx-parse-json": "^3.0.1",
@@ -67,19 +59,12 @@
     "@angular-devkit/build-angular": "^0.13.5",
     "@angular/cli": "^7.1.4",
     "@angular/compiler-cli": "^7.2.8",
-=======
-=======
->>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.11.4",
     "@angular/cli": "^7.1.4",
     "@angular/compiler-cli": "^7.1.4",
-<<<<<<< HEAD
->>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
-=======
->>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
     "@types/jasmine": "^3.3.4",
     "@types/node": "^10.12.18",
     "codelyzer": "^4.5.0",

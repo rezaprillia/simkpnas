@@ -125,11 +125,6 @@ export class AssetService {
   update(id: any, asset: Asset): Observable < any > {
     return this.http.put(this.resourceUrl + '/' + id, asset);
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
   getAllDropDown(): Observable < any > {
     return this.http.get(this.resourceUrl + '/dropdown');
   }
@@ -139,23 +134,4 @@ export class AssetService {
   getDataByFilter(a: any, page: number, size: number): Observable < any > {
     return this.http.get(this.resourceUrlFilter + a + '&page=' + page + '&size=' + size)
   }
-<<<<<<< HEAD
-
-=======
-
-  getAllDropDown(): Observable < any > {
-    return this.http.get(this.resourceUrl + '/dropdown');
-  }
-
-  getDataOne(a: any, page: number, size: number): Observable < any > {
-    return this.http.get(this.resourceUrlFilter + 'siteCodeExist~' + a + '&page=' + page + '&size=' + size)
-  }
-
-  getDataByFilter(a: any, page: number, size: number): Observable < any > {
-    return this.http.get(this.resourceUrlFilter + a + '&page=' + page + '&size=' + size)
-  }
->>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
-=======
-  
->>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 }

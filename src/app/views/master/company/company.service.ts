@@ -1,60 +1,11 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { HttpClient } from '@angular/common/http';
-import { AppConstant } from './../../../app.constant';
-import { Observable } from 'rxjs/Observable';
-=======
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { AppConstant } from '../../../app.constant';
->>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
-=======
-import { Observable } from 'rxjs/Observable';
-import { HttpClient } from '@angular/common/http';
-import { AppConstant } from '../../../app.constant';
->>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 import { Company } from './company.model';
 
 @Injectable()
 export class CompanyService {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    private resourceUrl = this.a.SERVER_URL + '/company';
-    private resourceUrlPaging = this.a.SERVER_URL + '/company/page/0/size/20';
-
-    constructor(private http: HttpClient, private a: AppConstant) { }
-
-    getAll(): Observable<any> {
-        return this.http.get(this.resourceUrl + '/filter?search=activationCode!N');
-    }
-
-    save(company: Company): Observable<any> {
-        console.log('company : ', company);
-        return this.http.post(this.resourceUrl, company);
-        // return null;
-    }
-
-    update(id: any, company: Company): Observable<any> {
-        return this.http.put(this.resourceUrl + '/' + id, company);
-    }
-
-    delete(data: any): Observable<any> {
-        data.activationCode = 'N';
-        return this.http.put(this.resourceUrl + '/' + data.id, data)
-    }
-
-    getAllDropDown(): Observable<any> {
-        return this.http.get(this.resourceUrl + '/dropdown');
-    }
-
-    getById(id: any): Observable<any> {
-        return this.http.get(this.resourceUrl + '/' + id);
-    }
-=======
-=======
->>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
   private resourceUrlCompany = this.a.SERVER_URL + '/master/Company';
   private resourceUrlRoleAuth = this.a.SERVER_URL + '/role_menu_authorization';
   private resourceUrlMenu = this.a.SERVER_URL + '/menu_tab';
@@ -152,8 +103,4 @@ export class CompanyService {
   deleteRoleAuth(id: any): Observable<any> {
     return this.http.delete(this.resourceUrlRoleAuth + '/' + id)
   }
-<<<<<<< HEAD
->>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
-=======
->>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 }
