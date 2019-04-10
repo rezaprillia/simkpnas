@@ -16,7 +16,7 @@ const daftarKategori: KategoriAktif[] = [{
 
 @Injectable()
 export class OrganisasiService {
-  private resourceUrlVisi = this.a.SERVER_URL + '/system/MasterOrganization';
+  private resourceUrlVisi = this.a.SERVER_URL + '/master/Organization';
   private resourceUrlRoleAuth = this.a.SERVER_URL + '/role_menu_authorization';
   private resourceUrlMenu = this.a.SERVER_URL + '/menu_tab';
 

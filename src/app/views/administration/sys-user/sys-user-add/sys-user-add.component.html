@@ -9,17 +9,9 @@
     <dx-form [(formData)]="user" validationGroup="userData">
       <dxi-item itemType="group" [colCount]="2">
         <dxi-item itemType="group">
-          <dxi-item dataField="role_id" editorType="dxSelectBox" [editorOptions]="{items: daftarRole, value:'', displayExpr: 'nama', valueExpr: 'role_id'}">            
-            <dxo-label text="User Role"></dxo-label>
-            <dxi-validation-rule type="required" message="User Role is required"></dxi-validation-rule>
-          </dxi-item>
-          <dxi-item dataField="userid">
-            <dxo-label text="User ID"></dxo-label>
-            <dxi-validation-rule type="required" message="User ID is required"></dxi-validation-rule>
-          </dxi-item>
-          <dxi-item dataField="username">
-            <dxo-label text="Username"></dxo-label>
-            <dxi-validation-rule type="required" message="Username is required"></dxi-validation-rule>
+          <dxi-item dataField="npeg">
+            <dxo-label text="No. Pegawai"></dxo-label>
+            <dxi-validation-rule type="required" message="No. Pegawai is required"></dxi-validation-rule>
           </dxi-item>
           <dxi-item dataField="nama">
             <dxo-label text="Nama"></dxo-label>
@@ -29,42 +21,49 @@
             <dxo-label text="Password"></dxo-label>
             <dxi-validation-rule type="required" message="Password is required"></dxi-validation-rule>
             <dxi-validation-rule type="pattern" pattern= "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" message="Password must be at least 8 characters, must contain both uppercase letters (A-Z) and lowercase letters (a-z), and must contain a number (0-9)"></dxi-validation-rule>   
-        </dxi-item>
+          </dxi-item>
+          <dxi-item dataField="gelar">
+            <dxo-label text="Gelar"></dxo-label>
+          </dxi-item>
+          <dxi-item dataField="pendidikan">
+            <dxo-label text="Pendidikan"></dxo-label>
+          </dxi-item>
+          <dxi-item dataField="tgl_masuk" editorType="dxDateBox" [editorOptions]="{ value: null, width: '100%' }">
+            <dxo-label text="Tanggal Masuk"></dxo-label>
+            <dxi-validation-rule type="required" message="Tanggal Masuk is required"></dxi-validation-rule>
+          </dxi-item>
+          <dxi-item dataField="tgl_capeg" editorType="dxDateBox" [editorOptions]="{ value: null, width: '100%' }">
+            <dxo-label text="Tanggal Capeg"></dxo-label>
+            <dxi-validation-rule type="required" message="Tanggal Calon Pegawai is required"></dxi-validation-rule>
+          </dxi-item>
+          <dxi-item dataField="tgl_pegawai_tetap" editorType="dxDateBox" [editorOptions]="{ value: null, width: '100%' }">
+            <dxo-label text="Tanggal Pegawai Tetap"></dxo-label>
+            <dxi-validation-rule type="required" message="Tanggal Pegawai Tetap is required"></dxi-validation-rule>
+          </dxi-item>
+          
           <dxi-item dataField="jabatan_id" editorType="dxSelectBox" [editorOptions]="{items: daftarJabatan, value:'', displayExpr: 'position_title', valueExpr: 'idpos'}">            
             <dxo-label text="ID Jabatan"></dxo-label>
-            <dxi-validation-rule type="required" message="ID Jabatan is required"></dxi-validation-rule>
+            <!--<dxi-validation-rule type="required" message="ID Jabatan is required"></dxi-validation-rule>-->
           </dxi-item>
           <dxi-item dataField="entitas_id" editorType="dxSelectBox" [editorOptions]="{items: roles, value:'', displayExpr: 'roleName', valueExpr: 'id'}">            
             <dxo-label text="ID Entitas"></dxo-label>
-            <dxi-validation-rule type="required" message="ID Entitas is required"></dxi-validation-rule>
+            <!--<dxi-validation-rule type="required" message="ID Entitas is required"></dxi-validation-rule>-->
           </dxi-item>
           <dxi-item dataField="alamat"><dxo-label text="Alamat"></dxo-label></dxi-item>
-          <dxi-item dataField="propinsi"><dxo-label text="Propinsi"></dxo-label></dxi-item>
           <dxi-item dataField="kota"><dxo-label text="Kota/Kab."></dxo-label></dxi-item>
-          <dxi-item dataField="kecamatan"><dxo-label text="Kecamatan"></dxo-label></dxi-item>
-          <dxi-item dataField="kelurahan"><dxo-label text="Kelurahan"></dxo-label></dxi-item>
           <dxi-item dataField="kode_pos"><dxo-label text="Kode Pos"></dxo-label></dxi-item>
         </dxi-item>
         <dxi-item itemType="group">
-          <dxi-item dataField="languageDefaultId" editorType="dxSelectBox" [editorOptions]="{items: languages, value:'', displayExpr: 'language', valueExpr: 'id'}">
-            <dxo-label text="Language"></dxo-label>
-            <dxi-validation-rule type="required" message="Language is required"></dxi-validation-rule>
-          </dxi-item>
-          <dxi-item dataField="no_hp">
-              <dxo-label text="No HP"></dxo-label>
-              <dxi-validation-rule type="required" message="No HP is required"></dxi-validation-rule>
+          <dxi-item dataField="jenis_kelamin" editorType="dxSelectBox" [editorOptions]="{items: languages, value:'', displayExpr: 'language', valueExpr: 'id'}">
+            <dxo-label text="Jenis Kelamin"></dxo-label>
           </dxi-item>
           <dxi-item dataField="email"><dxo-label text="Email"></dxo-label>            
-              <dxi-validation-rule type="required" message="Email is required"></dxi-validation-rule>
               <dxi-validation-rule type="email" message="Email is invalid"></dxi-validation-rule>
           </dxi-item>
         <dxi-item itemType="group" [colCount]="2">
           <dxi-item dataField="photo_url" [template]="'photoTemplate'" >
             <dxo-label text="Photo"></dxo-label>
           </dxi-item>
-        </dxi-item>
-        <dxi-item dataField="description" editorType="dxTextArea">
-            <dxo-label text="Description"></dxo-label>
         </dxi-item>
         <dxi-item dataField="status" editorType="dxCheckBox">
           <dxo-label text="Active"></dxo-label>

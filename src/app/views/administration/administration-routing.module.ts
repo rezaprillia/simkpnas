@@ -26,6 +26,13 @@ const routes: Routes = [
           title: 'Master Asset'
         }
       }, 
+      {
+        path: 'users',
+        component: SysUserComponent,
+        data: {
+          title: 'Users'
+        }
+      }, 
       // {
       //   path: 'users',
       //   component: UserComponent,
@@ -34,12 +41,6 @@ const routes: Routes = [
       //   }
       // }, 
       {
-        path: 'users',
-        component: UserComponent,
-        data: {
-          title: 'Users'
-        }
-      }, {
         path: 'role',
         component: RoleComponent,
         data: {

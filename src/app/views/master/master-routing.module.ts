@@ -13,7 +13,9 @@ import { SiteComponent } from './site/site.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanyAddComponent } from './company/company-add/company-add.component';
 import { OrganisasiComponent } from './organisasi/organisasi.component';
-import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi.component'
+import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi.component';
+import { JadwalComponent} from './jadwal/jadwal.component';
+import { UploadComponent} from './upload/upload.component';
 
 const routes: Routes = [
   {
@@ -64,20 +66,6 @@ const routes: Routes = [
           title: 'Company'
         }
       },
-      // {
-      //   path: 'company/edit/:id',
-      //   component: CompanyEditComponent,
-      //   data: {
-      //     title: 'Company Edit'
-      //   }
-      // },
-      // {
-      //   path: 'company/add',
-      //   component: CompanyAddComponent,
-      //   data: {
-      //     title: 'Company Add'
-      //   }
-      // },
       {
         path: 'site',
         component: SiteComponent,
@@ -119,7 +107,21 @@ const routes: Routes = [
         data: {
           title: 'Posisi Organisasi'
         }
-      }
+      },
+      {
+        path: 'jadwal',
+        component: JadwalComponent,
+        data: {
+          title: 'Jadwal'
+        }
+      },
+      {
+        path: 'upload',
+        component: UploadComponent,
+        data: {
+          title: 'Upload'
+        }
+      },
     ]
   }
 ];

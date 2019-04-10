@@ -62,6 +62,7 @@ import { ActivatedRoute } from '@angular/router/src/router_state';
        address: null,
        postalCode: null,
        email: null,
+       password: null,
        photoUrl: null,
        formUser: null,
        status: null,
@@ -212,7 +213,7 @@ import { ActivatedRoute } from '@angular/router/src/router_state';
            status: status,
            ldap: resp.ldap,
            activationCode: resp.activationCode,
-           passwd: resp.passwd,
+           password: resp.password,
            facsimile: resp.facsimile,
            country: resp.country,
            companyCode: resp.companyCode,
@@ -238,7 +239,7 @@ import { ActivatedRoute } from '@angular/router/src/router_state';
          address: null,
          postalCode: null,
          email: null,
-         passwd: null,
+         password: null,
          photoUrl: null,
          formUser: null,
          status: null,
@@ -278,6 +279,6 @@ import { ActivatedRoute } from '@angular/router/src/router_state';
      this.substationSearchVsb = true;
    }
    passwdCompare = () => {
-     return this.user.passwd;
+     return this.user.password;
     };
  }

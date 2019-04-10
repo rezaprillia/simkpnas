@@ -1,0 +1,74 @@
+td {
+    padding-left: 10px;
+}
+table {
+    margin: 5px;
+}
+.kecil {
+    width: 45px;
+}
+#note {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+#kasihGaris {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+#margin5 {
+    margin-left: 7px;
+}
+#keterangan {
+    width: 300px;
+}
+:host {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+::ng-deep .demo-container {
+    height: 450px;
+}
+::ng-deep .buttons-demo {
+    width: 600px;
+    align-self: center;
+}
+::ng-deep .header {
+    display: flex;
+    flex-wrap: nowrap;
+}
+::ng-deep .header > div {
+    flex-grow: 0;
+    flex-basis: 120px;
+    height: 30px;
+}
+::ng-deep .types {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    float: left;
+}
+::ng-deep .types > div {
+    flex-grow: 1;
+    padding: 10px;
+    height: 30px;
+    line-height: 20px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+::ng-deep .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 120px;
+}
+::ng-deep .buttons > div {
+    flex-basis: 120px;
+    height: 50px;
+}
+::ng-deep .send .dx-button-content .dx-icon {
+    font-size: 18px;
+}
+dx-button{
+    margin: 5px;
+}

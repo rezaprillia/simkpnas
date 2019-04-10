@@ -1,41 +1,49 @@
 import { InteractivityChecker } from "@angular/cdk/a11y";
 
 export class Search {
-    userid: number;
-    username: string;
+    npeg: string;
     nama: string;
     email: string;
+    posisi: string;
+    jabatan_id: string;
   }
   
   export class SysUser {
-    userid: number;
-    username: string;
+    npeg: string;
     nama: string;
     password: string;
-    jabatan_id: number;
-    entitas_id: number;
-    role_id: number;
-    active: number
-    language_default_id: string;
+    gelar: string;
+    pendidikan: string;
+    tgl_masuk: Date;
+    tgl_capeg: Date;
+    tgl_pegawai_tetap: Date;
+    jenis_pegawai: string;
+    tgl_pensiun: Date;
+    tgl_lahir: Date;
+    jenis_kelamin: string;
+    gol_darah: string;
+    agama: string;
+    status: string;
     alamat: string;
-    propinsi: string;
     kota: string;
-    kecamatan: string;
-    kelurahan: string;
     kodepos: string;
-    nohp: string;
+    grade: string;
     email: string;
-    description: string;
+    posisi: string;
+    jabatan_id: string;
+    startdate: Date;
+    enddate: Date;
     photo_url: string;
+    active: number;
     registration_by: string;
     registration_date: Date;
     activation_by: string;
     activation_date: Date;
     deactivation_by: string;
     deactivation_date: Date;
-    activation_code: string;
     modified_by: string;
     modified_date: Date;
+    activation_code: string;
   }
   
   export class Menu {
@@ -52,14 +60,9 @@ export class Search {
     ID: number;
     Nama: string;
   }
-  
-  export class DaftarRole {
-    role_id: number;
-    nama: string;
-  }
 
-  export class DaftarJabatan {
-    idpos: string;
-    position_title: string;
-  }
+  // export class DaftarJabatan {
+  //   idpos: string;
+  //   position_title: string;
+  // }
   

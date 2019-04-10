@@ -52,26 +52,34 @@ export class SysUserComponent implements AfterViewInit {
   jabatans: any[];
   entitas: any[];
 
-  // roles: any[];
+  //roles: any[];
   gridDataSource: any = {};
+  npeg: any;
   nama: any;
-  userid: any;
-  role_id: any;
-  username: any;
   password: any;
-  jabatan_id: any;
-  entitas_id: any;
-  active: any;
-  language_default_id: any;
+  gelar: any;
+  pendidikan: any;
+  tgl_masuk: any;
+  tgl_capeg: any;
+  tgl_pegawai_tetap: any;
+  jenis_pegawai: any;
+  tgl_pensiun: any;
+  tgl_lahir: any;
+  jenis_kelamin: any;
+  gol_darah: any;
+  agama: any;
+  status: any;
   alamat: any;
-  provinsi: any;
-  kecamatan: any;
-  kelurahan: any;
+  kota: any;
   kodepos: any;
-  nohp: any;
+  grade: any;
   email: any;
-  description: any;
+  posisi: any;
+  jabatan_id: any;
+  startdate: any;
+  enddate: any;
   photo_url: any;
+  active: any;
   search: Search;
   users: any;
   isDetail = false;
@@ -100,10 +108,11 @@ export class SysUserComponent implements AfterViewInit {
     @Inject(SysUserService) private sysUserService: SysUserService
   ) {
     this.search = {
-      'userid': null,
-      'username': '',
+      'npeg': '',
       'nama': '',
       'email': '',
+      'posisi': '',
+      'jabatan_id': ''
     };
 
     this.contextItems = [
@@ -315,8 +324,8 @@ export class SysUserComponent implements AfterViewInit {
           resp[index].menu = menus;
         })
       });
-      if (this.search.userid !== null) {
-        this.gridDataSource = resp.filter(role => role.roleName === this.search.userid).filter(data => data.activationCode === 'Y');
+      if (this.search.npeg !== null) {
+        this.gridDataSource = resp.filter(role => role.roleName === this.search.npeg).filter(data => data.activationCode === 'Y');
       } else {
         this.gridDataSource = resp.filter(data => data.activationCode === 'Y');
       }
@@ -345,8 +354,8 @@ export class SysUserComponent implements AfterViewInit {
           resp[index].menu = menus;
         })
       });
-      if (this.search.userid !== null) {
-        this.gridDataSource = resp.filter(role => role.role_id === this.search.userid).filter(data => data.activationCode === 'Y');
+      if (this.search.npeg !== null) {
+        this.gridDataSource = resp.filter(role => role.role_id === this.search.npeg).filter(data => data.activationCode === 'Y');
       } else {
         this.gridDataSource = resp.filter(data => data.activationCode === 'Y');
       }

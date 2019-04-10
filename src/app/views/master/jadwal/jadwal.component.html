@@ -1,0 +1,101 @@
+<div  class="content-block">
+  <div class="dx-card responsive-paddings">
+  <div>
+    <table>
+      <tr>
+        <td>Jenis Jadwal</td>
+        <td>:</td>
+        <td>
+          <select name="jenisJadwal" id="jenisJadwal">
+            <option value="select">Select</option>
+            <option value="select">Periode inisiasi atasan kepada bawahan</option>
+            <option value="select">Periode pengisian dan pengesahan perencanaan sasaran kinerja KPI URJAB (Uraian Jabatan)</option>
+            <option value="select">Periode entry pencapaian realisasi kinerja dan evaluasi pencapaian kinerja individu</option>
+            <option value="select">Periode penilaian kompetensi pegawai</option>
+            <option value="select">Periode entry sasaran kinerja pegawai dan approval atasan</option>
+            <option value="select">Perpanjangan periode entry sasaran kinerja pegawai dan approval atasan</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Tanggal</td>
+        <td>:</td>
+        <td>
+            <input type="datetime-local" name="tanggal" placeholder="input tanggal">
+          </td>
+      </tr>
+      <tr>
+        <td>Tanggal Akhir</td>
+        <td>:</td>
+        <td>
+          <input type="datetime-local" name="tglAkhir">
+        </td>
+      </tr>
+      <tr>
+        <td>Semester Aktif</td>
+        <td>:</td>
+        <td colspan="4">
+          <select name="semesterAktif" id="semesterAktif">
+            <option value="semester1_19">Semester 1 2019</option>
+            <option value="semester2_19">Semester 2 2019</option>
+            <option value="semester1_20">Semester 1 2020</option>
+            <option value="semester2_20">Semester 2 2020</option>
+            <option value="semester1_21">Semester 1 2021</option>
+            <option value="semester2_21">Semester 2 2021</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Keyword</td>
+        <td>:</td>
+        <td colspan="4">
+          <input type="text" name="keyword" id="keyword">
+        </td>
+      </tr>
+      <tr>
+        <td>Kategori</td>
+        <td>:</td>
+        <td colspan="4">
+          <input type="text" name="kategori" id="kategori">
+        </td>
+      </tr>
+      <tr>
+        <td>Keterangan</td>
+        <td>:</td>
+        <td id="keterangan" colspan="2">
+          <textarea name="keterangan" id="keterangan" cols="90" rows="3"></textarea>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <p id="note">
+      Note : {{note}}
+    </p>
+  </div>
+  <div id="kasihGaris">
+    <dx-button
+      type="success"
+      text="OK"
+      (onClick)="okClick()">
+    </dx-button>
+    <dx-button
+      type="success"
+      text="Close"
+      (onClick)="closeClick()">
+    </dx-button>
+    <dx-button
+      type="success"
+      text="Save"
+      (onClick)="saveClick()">
+    </dx-button>
+  </div>
+  <b>Jadwal per Jenjang</b>
+  <br><br>
+  <dx-button
+    type="success"
+    text="Add"
+    (onClick)="addClick()">
+</dx-button>
+</div>
+</div>

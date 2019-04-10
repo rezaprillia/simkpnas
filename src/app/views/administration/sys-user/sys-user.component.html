@@ -47,13 +47,11 @@
             <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 20, 50]" [showInfo]="true" [showNavigationButtons]="true">
             </dxo-pager> -->
             <dxo-export [enabled]="true" fileName="User Management" [allowExportSelectedData]="false"></dxo-export>
-
-            <dxi-column dataField="userid" width="80px" caption="User ID" sortOrder="asc" [allowEditing]="false"></dxi-column>
-            <dxi-column dataField="username" width="120px" caption="Username" [allowEditing]="false"></dxi-column>
+            <dxi-column dataField="npeg" width="150px" caption="No. Pegawai" sortOrder="asc" [allowEditing]="false"></dxi-column>
             <dxi-column dataField="nama" caption="Nama" width="150px" [allowEditing]="false"></dxi-column>
-            <dxi-column dataField="password" caption="Password" width="150px" [allowEditing]="false"></dxi-column>
-            <dxi-column dataField="no_hp" caption="Telp." width="150px" [allowEditing]="false"></dxi-column>
             <dxi-column dataField="email" caption="Email" width="180px" [allowEditing]="false"></dxi-column>
+            <dxi-column dataField="posisi" caption="Posisi" width="180px" [allowEditing]="false"></dxi-column>
+            <dxi-column dataField="jabatan_id" caption="ID Jabatan" width="180px" [allowEditing]="false"></dxi-column>
             <dxi-column [fixed]="true" width="55px" dataField="userid" caption="Action" [allowExporting]="false" [allowFiltering]="false" [allowSorting]="false" cellTemplate="cellTemplate"></dxi-column>
             <div *dxTemplate="let data of 'cellTemplate'">
               <div (click)="showMenu(data.value)" class="text-center">

@@ -12,7 +12,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { AppConstant } from '../../../app.constant';
-import { SysUser, KategoriAktif, DaftarRole, DaftarJabatan} from './sys-user.model';
+import { SysUser, KategoriAktif} from './sys-user.model';
 
 const simpleProducts: string[] = [ 'Y', 'N' ];
 const daftarKategori: KategoriAktif[] = [{
@@ -22,36 +22,37 @@ const daftarKategori: KategoriAktif[] = [{
   'ID': 1,
   'Nama': 'Aktif'
 }];
-const daftarRole: DaftarRole[] = [{
-  'role_id': 4,
-  'nama': 'Admin'
-}, {
-  'role_id': 3,
-  'nama': 'Bawahan'
-}, {
-  'role_id': 2,
-  'nama': 'Atasan'
-}];
 
-const daftarJabatan: DaftarJabatan[] = [{
-    'idpos': '1',
-    'position_title' : 'GENERAL MANAGER'
-}, {
-    'idpos' : '2',
-    'position_title' : 'MANAGER'
-}, {
-    'idpos' : '3',
-    'position_title' : 'OFFICER'
-}, {
-    'idpos' : '4',
-    'position_title' : 'SUPERVISOR'
-}]
+// const daftarRole: DaftarRole[] = [{
+//   'role_id': 4,
+//   'nama': 'Admin'
+// }, {
+//   'role_id': 3,
+//   'nama': 'Bawahan'
+// }, {
+//   'role_id': 2,
+//   'nama': 'Atasan'
+// }];
+
+// const daftarJabatan: DaftarJabatan[] = [{
+//     'idpos': '1',
+//     'position_title' : 'GENERAL MANAGER'
+// }, {
+//     'idpos' : '2',
+//     'position_title' : 'MANAGER'
+// }, {
+//     'idpos' : '3',
+//     'position_title' : 'OFFICER'
+// }, {
+//     'idpos' : '4',
+//     'position_title' : 'SUPERVISOR'
+// }]
 
 var arrRoleId = new Array()   ;
 
 @Injectable()
 export class SysUserService {
-  private resourceUrlUser = this.a.SERVER_URL + '/system/User';
+  private resourceUrlUser = this.a.SERVER_URL + '/system/SystemUser';
   private resourceUrlRoleAuth = this.a.SERVER_URL + '/role_menu_authorization';
   private resourceUrlMenu = this.a.SERVER_URL + '/menu_tab';
   private resourceUrlRole = this.a.SERVER_URL + '/system/UserRole';
@@ -68,13 +69,13 @@ export class SysUserService {
     return daftarKategori;
   }
 
-  getDaftarRole(): DaftarRole[] {
-    return daftarRole;
-  }
+  // getDaftarRole(): DaftarRole[] {
+  //   return daftarRole;
+  // }
 
-  getDaftarJabatan(): DaftarJabatan[] {
-    return daftarJabatan;
-  }
+  // getDaftarJabatan(): DaftarJabatan[] {
+  //   return daftarJabatan;
+  // }
 
   getById(id: any): Observable<any> {
     const token = localStorage.getItem('token');

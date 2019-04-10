@@ -24,7 +24,7 @@ import {
 import {SysUserService} from '../sys-user.service';
 // import { AddRoleService } from './role-add.service';
 
-import {Menu, SysUser, KategoriAktif, DaftarRole, DaftarJabatan} from '../sys-user.model';
+import {Menu, SysUser, KategoriAktif} from '../sys-user.model';
 import notify from 'devextreme/ui/notify';
 import {DxTreeListComponent, DxValidatorModule, DxValidationSummaryModule, DxFormComponent} from 'devextreme-angular';
 import { DxiItemComponent } from 'devextreme-angular/ui/nested/item-dxi';
@@ -50,8 +50,8 @@ import { DxiItemComponent } from 'devextreme-angular/ui/nested/item-dxi';
    simpleProducts: string[];
    jabatans: any;
    daftarKategori: KategoriAktif[];
-   daftarRole: DaftarRole[];
-   daftarJabatan: DaftarJabatan[];
+   //daftarRole: DaftarRole[];
+   //daftarJabatan: DaftarJabatan[];
    // cekAktif: boolean;
    previousValue: boolean;
    newValue: boolean;
@@ -73,37 +73,44 @@ import { DxiItemComponent } from 'devextreme-angular/ui/nested/item-dxi';
    constructor(private sysUserService: SysUserService) {
      this.simpleProducts = sysUserService.getSimpleProducts();
      this.daftarKategori = sysUserService.getDaftarKategori();
-     this.daftarRole = sysUserService.getDaftarRole();
-     this.daftarJabatan = sysUserService.getDaftarJabatan();
+     //this.daftarRole = sysUserService.getDaftarRole();
+     //this.daftarJabatan = sysUserService.getDaftarJabatan();
      this.user = {
-      userid: null,
-      username: '',
+      npeg: null,
       nama: '',
       password: '',
-      jabatan_id: null,
-      entitas_id: null,
-      role_id: null,
-      active: null,
-      language_default_id: '',
+      gelar: '',
+      pendidikan: '',
+      tgl_masuk: null,
+      tgl_capeg: null,
+      tgl_pegawai_tetap: null,
+      jenis_pegawai: '',
+      tgl_pensiun: null,
+      tgl_lahir: null,
+      jenis_kelamin: '',
+      gol_darah: '',
+      agama: '',
+      status: '',
       alamat: '',
-      propinsi: '',
       kota: '',
-      kecamatan: '',
-      kelurahan: '',
       kodepos: '',
-      nohp: '',
+      grade: '',
       email: '',
-      description: '',
+      posisi: '',
+      jabatan_id: '',
+      startdate: null,
+      enddate: null,
       photo_url: '',
+      active: null,
       registration_by: '',
       registration_date: null,
       activation_by: '',
       activation_date: null,
       deactivation_by: '',
       deactivation_date: null,
-      activation_code: '',
       modified_by: '',
       modified_date: null,
+      activation_code: ''
     };
    }
 
@@ -115,68 +122,82 @@ import { DxiItemComponent } from 'devextreme-angular/ui/nested/item-dxi';
         console.log(respRole);
         const nilai: string = respRole.d.isdisplayed;
         this.user = {
-          userid: respRole.d.userid,
-          username: respRole.d.username,
+          npeg: respRole.d.npeg,
           nama: respRole.d.nama,
           password: respRole.d.password,
-          jabatan_id: respRole.d.jabatan_id,
-          entitas_id: respRole.d.entitas_id,
-          role_id: respRole.d.role_id,
-          active: respRole.d.active,
-          language_default_id: respRole.d.language_default_id,
+          gelar: respRole.d.gelar,
+          pendidikan: respRole.d.pendidikan,
+          tgl_masuk: respRole.d.tgl_masuk,
+          tgl_capeg: respRole.d.tgl_capeg,
+          tgl_pegawai_tetap: respRole.d.tgl_pegawai_tetap,
+          jenis_pegawai: respRole.d.jenis_pegawai,
+          tgl_pensiun: respRole.d.tgl_pensiun,
+          tgl_lahir: respRole.d.tgl_lahir,
+          jenis_kelamin: respRole.d.jenis_kelamin,
+          gol_darah: respRole.d.gol_darah,
+          agama: respRole.d.agama,
+          status: respRole.d.status,
           alamat: respRole.d.alamat,
-          propinsi: respRole.d.propinsi,
           kota: respRole.d.kota,
-          kecamatan: respRole.d.kecamatan,
-          kelurahan: respRole.d.kelurahan,
           kodepos: respRole.d.kodepos,
-          nohp: respRole.d.nohp,
+          grade: respRole.d.grade,
           email: respRole.d.email,
-          description: respRole.d.description,
+          posisi: respRole.d.posisi,
+          jabatan_id: respRole.d.jabatan_id,
+          startdate: respRole.d.startdate,
+          enddate: respRole.d.enddate,
           photo_url: respRole.d.photo_url,
+          active: respRole.d.active,
           registration_by: respRole.d.registration_by,
           registration_date: respRole.d.registration_date,
           activation_by: respRole.d.activation_by,
           activation_date: respRole.d.activation_date,
           deactivation_by: respRole.d.deactivation_by,
           deactivation_date: respRole.d.deactivation_date,
-          activation_code: respRole.d.activation_code,
           modified_by: username,
           modified_date: today,
+          activation_code: respRole.d.activation_code
         };
         // this.newValue = respRole.d.isallowregistration;
 
       })
     } else { // New Record
       this.user = {
-        userid: null,
-        username: null,
-        nama: null,
-        password: null,
-        jabatan_id: null,
-        entitas_id: null,
-        role_id: null,
-        active: null,
-        language_default_id: null,
-        alamat: null,
-        propinsi: null,
-        kota: null,
-        kecamatan: null,
-        kelurahan: null,
-        kodepos: null,
-        nohp: null,
-        email: null,
-        description: null,
-        photo_url: null,
-        registration_by: null,
-        registration_date: null,
-        activation_by: null,
-        activation_date: null,
-        deactivation_by: null,
-        deactivation_date: null,
-        activation_code: null,
-        modified_by: null,
-        modified_date: null,
+          npeg: null,
+          nama: null,
+          password: null,
+          gelar: null,
+          pendidikan: null,
+          tgl_masuk: null,
+          tgl_capeg: null,
+          tgl_pegawai_tetap: null,
+          jenis_pegawai: null,
+          tgl_pensiun: null,
+          tgl_lahir: null,
+          jenis_kelamin: null,
+          gol_darah: null,
+          agama: null,
+          status: null,
+          alamat: null,
+          kota: null,
+          kodepos: null,
+          grade: null,
+          email: null,
+          posisi: null,
+          jabatan_id: null,
+          startdate: null,
+          enddate: null,
+          photo_url: null,
+          active: null,
+          registration_by: null,
+          registration_date: null,
+          activation_by: null,
+          activation_date: null,
+          deactivation_by: null,
+          deactivation_date: null,
+          modified_by: null,
+          modified_date: null,
+          activation_code: null
       };
 
       // this.treeList.instance.refresh();

@@ -1,0 +1,97 @@
+#tableTemplate {
+    width: 45%;
+}
+#tableForm {
+    width: 70%;
+}
+#tableOutput {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 5px;
+}
+#tR, #tD, #tH {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td {
+    padding-left: 10px;
+}
+#content {
+    border-top: 1px solid black;
+    padding-top: 5px;
+}
+#contentOut {
+    padding-bottom: 5px;
+    width: 70%;
+    float: left;
+    padding: 15px;
+}  
+#notes {
+    width: 30%;
+    float: left;
+    padding: 15px;
+}
+#isinote {
+    color: red;
+}
+#endline {
+    border-top: 1px solid black;
+}
+#button {
+    /* padding: 5px; */
+    margin: 5px;
+    align-items: center;
+}
+::ng-deep .file-uploader-block {
+    width: 350px;
+    float: left;
+}
+
+::ng-deep .note {
+    font-size: 10pt;
+    color: #484848;
+    margin-left: 9px;
+}
+
+::ng-deep .note > span {
+	font-weight: 700
+}
+
+::ng-deep .main-block {
+    max-width: 900px;
+    min-width: 700px;
+}
+dx-button {
+    margin: 5px;
+}
+
+::ng-deep
+.dx-dropdowneditor-button .dx-button-content {
+    text-align: center;
+}
+
+::ng-deep
+.custom-icon {
+    max-height: 100%;
+    max-width: 100%;
+    font-size: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+::ng-deep
+.dx-theme-android5 .custom-item img {
+    padding: 4px 22px 0 0;
+}
+
+::ng-deep
+.custom-item img {
+    float: right;
+}
+
+::ng-deep
+.custom-item .product-name {
+    line-height: 32px;
+    padding-left: 5px;
+}

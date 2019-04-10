@@ -5,6 +5,7 @@ export class Search {
   roleId: String;
   email: String;
 }
+
 export class User {
   id: string;
   siteCode: string;
@@ -22,7 +23,7 @@ export class User {
   address: string;
   postalCode: string;
   email: string;
-  passwd?: string;
+  password: string;
   photoUrl: string;
   formUser: string;
   country: string;

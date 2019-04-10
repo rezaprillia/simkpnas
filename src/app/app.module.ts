@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 
 import { AuthGuard } from './security/auth.guard';
 import { TokenInterceptor } from './security/token.interceptor';
-import { UploadComponent } from 'app/views/upload/upload.component'
 
 // Import containers
 import {
@@ -115,7 +114,6 @@ export function HttpLoaderFactory(http) {
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
     ...APP_DIRECTIVES,
-    UploadComponent
   ],
   providers: [
     AuthGuard,

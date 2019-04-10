@@ -55,6 +55,8 @@ import { PositionTypeComponent } from './positiontype/positiontype.component';
 import { PositionTypeAddComponent } from './positiontype/add/positiontype-add.component';
 import { CompanyComponent } from './company/company.component';
 import { CompanyAddComponent } from './company/company-add/company-add.component';
+import { JadwalComponent } from './jadwal/jadwal.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   imports: [
@@ -102,7 +104,9 @@ import { CompanyAddComponent } from './company/company-add/company-add.component
     OrganisasiComponent,
     AddOrganisasi,
     PosisiOrganisasiComponent,
-    PosisiAddComponent
+    PosisiAddComponent,
+    JadwalComponent,
+    UploadComponent
   ],
   exports: [
     TabComponent
