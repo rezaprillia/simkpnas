@@ -113,7 +113,12 @@ export const routes: Routes = [
         path: 'notification',
         loadChildren: './views/notification/notification.module#NotificationModule',
         canActivate: [AuthGuard]
-      },
+      }
+      // {
+      //   path: 'upload',
+      //   component: UploadComponent,
+      //   canActivate: [AuthGuard]
+      // }
     ]
   },
   {

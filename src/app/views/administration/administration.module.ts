@@ -48,7 +48,15 @@ import {
 import { RoleComponent } from './role/role.component';
 import { UserComponent } from './user/user.component';
 import { AddUserComponent } from 'app/views/administration/user/add/user-add.component';
+<<<<<<< HEAD
+<<<<<<< HEAD
+import { AddRoleComponent } from './role/add/role-add.component';
+=======
 import {AddRoleComponent} from './role/add/role-add.component';
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+import {AddRoleComponent} from './role/add/role-add.component';
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 import { AddAssetBrandComponent } from 'app/views/administration/master_asset/add_assetbrand/brand-add.component';
 import { AddManufactureComponent } from 'app/views/administration/master_asset/add_manufacture/manufacture-add.component';
 import { AddTypeComponent } from 'app/views/administration/master_asset/add_type/type-add.component';
@@ -60,6 +68,12 @@ import { AddVisiComponent } from './visi/add/visi-add.component';
 import { MisiComponent } from './misi/misi.component';
 import { RolemenuComponent } from './rolemenu/rolemenu.component';
 import { AddRolemenuComponent } from './rolemenu/add/rolemenu-add.component';
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+=======
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 import { OrganisasiComponent } from './organisasi/organisasi.component';
 // import { AddOrganisasiComponent } from './organisasi/Add/organisasi-add.component';
 import { AddOrganisasiComponent } from './organisasi/Add/organisasi-add.component';
@@ -67,6 +81,10 @@ import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi
 import { SysUserComponent } from './sys-user/sys-user.component';
 import { SysUserAddComponent } from './sys-user/sys-user-add/sys-user-add.component';
 import { DetailSysUserComponent } from './sys-user/sys-user-detail/sys-user-detail.component';
+<<<<<<< HEAD
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
 
 @NgModule({
   imports: [
@@ -111,12 +129,21 @@ import { DetailSysUserComponent } from './sys-user/sys-user-detail/sys-user-deta
     MisiComponent,
     RolemenuComponent,
     AddRolemenuComponent,
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
     OrganisasiComponent,
     AddOrganisasiComponent,
     PosisiOrganisasiComponent,
     SysUserComponent,
     SysUserAddComponent,
     DetailSysUserComponent
+<<<<<<< HEAD
+>>>>>>> 5d49cea3c17ee0cb875e96c26dc2e59681eb7f2e
+=======
+>>>>>>> 6077fed911845cd690929106cd7754b614c9fd92
   ],
   exports: [
   ],

@@ -114,6 +114,8 @@ export function HttpLoaderFactory(http) {
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
     ...APP_DIRECTIVES,
+    ...APP_DIRECTIVES,
+    ...APP_DIRECTIVES,
   ],
   providers: [
     AuthGuard,

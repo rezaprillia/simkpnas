@@ -8,7 +8,14 @@ import { User } from 'app/views/administration/user/user.model';
 export class UserService {
   // private resourceUrlUser = this.a.SERVER_URL + '/user_tab';
   //default resourceUrlUser = /system/User
-  private resourceUrlUser = this.a.SERVER_URL + '/system/TryUser'; 
+//   private resourceUrlUser = this.a.SERVER_URL + '/system/TryUser'; 
+// <<<<<<< HEAD
+// <<<<<<< HEAD
+//   private resourceUrlUser = this.a.SERVER_URL + '/system/user/table';
+//   private resourceUrlSite = this.a.SERVER_URL + '/site';
+//   private resourceUrlRole = this.a.SERVER_URL + '/user_role';
+// =======
+  private resourceUrlUser = this.a.SERVER_URL + '/system/User';
   private resourceUrlSite = this.a.SERVER_URL + '/site';
   private resourceUrlRole = this.a.SERVER_URL + '/system/UserRole';
   private resourceUrlSiteChild = this.a.SERVER_URL + '/site_child';
@@ -18,7 +25,9 @@ export class UserService {
   private resourceUrlCompany = this.a.SERVER_URL + '/company';
   private resourceUrlSiteCodeExist = this.a.SERVER_URL + '/site/filter?search=siteCodeExist:'
 
-  constructor(private http: HttpClient, private a: AppConstant) {}
+  constructor(private http: HttpClient, private a: AppConstant) {
+
+  }
 
   delete(data: any): Observable < any > {
     data.status = 'D';

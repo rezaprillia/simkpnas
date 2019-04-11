@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
+
 import { OrgTypeComponent } from './orgtype/orgtype.component';
 import { PositionTypeComponent } from './positiontype/positiontype.component';
 import { PositionComponent } from './position/position.component';
@@ -39,6 +40,27 @@ const routes: Routes = [
         }
       },
       {
+        path: 'company',
+        component: CompanyComponent,
+        data: {
+          title: 'Company'
+        }
+      },
+      // {
+      //   path: 'company/edit/:id',
+      //   component: CompanyEditComponent,
+      //   data: {
+      //     title: 'Company Edit'
+      //   }
+      // },
+      {
+        path: 'company/add',
+        component: CompanyAddComponent,
+        data: {
+          title: 'Company Add'
+        }
+      },
+      {
         path: 'orgtype',
         component: OrgTypeComponent,
         data: {
@@ -66,6 +88,20 @@ const routes: Routes = [
           title: 'Company'
         }
       },
+      // {
+      //   path: 'company/edit/:id',
+      //   component: CompanyEditComponent,
+      //   data: {
+      //     title: 'Company Edit'
+      //   }
+      // },
+      // {
+      //   path: 'company/add',
+      //   component: CompanyAddComponent,
+      //   data: {
+      //     title: 'Company Add'
+      //   }
+      // },
       {
         path: 'site',
         component: SiteComponent,
