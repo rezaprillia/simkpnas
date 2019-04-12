@@ -7,7 +7,8 @@ import { User } from 'app/views/administration/user/user.model';
 @Injectable()
 export class UserService {
   // private resourceUrlUser = this.a.SERVER_URL + '/user_tab';
-  private resourceUrlUser = this.a.SERVER_URL + '/system/User';
+  //default resourceUrlUser = /system/User
+  private resourceUrlUser = this.a.SERVER_URL + '/system/TryUser'; 
   private resourceUrlSite = this.a.SERVER_URL + '/site';
   private resourceUrlRole = this.a.SERVER_URL + '/system/UserRole';
   private resourceUrlSiteChild = this.a.SERVER_URL + '/site_child';
@@ -35,7 +36,7 @@ export class UserService {
     return this.http.put(this.resourceUrlUser + '/v2/' + data.id, data)
   }
   save(data: User): Observable < any > {
-    return this.http.post(this.resourceUrlUser + '/v2', data)
+    return this.http.post(this.resourceUrlUser + '/v2/', data)
   }
   update(data: User): Observable < any > {
     return this.http.put(this.resourceUrlUser + '/v2/' + data.id, data)

@@ -93,16 +93,16 @@ export class UserComponent implements AfterViewInit {
       }
     ]
 
-    userService.getAllSite().subscribe(resp => {
-      console.log(resp);
-      this.sites = resp.d.data;
-    });
-    userService.getAllCompany().subscribe(resp => {
-      this.companies = resp;
-    });
-    userService.getAllRole().subscribe(resp => {
-      this.roles = resp;
-    });
+    // userService.getAllSite().subscribe(resp => {
+    //   console.log(resp);
+    //   this.sites = resp.d.data;
+    // });
+    // userService.getAllCompany().subscribe(resp => {
+    //   this.companies = resp;
+    // });
+    // userService.getAllRole().subscribe(resp => {
+    //   this.roles = resp;
+    // });
   }
   calculateCellValue(data) {
     if (data.status === 'A') {
@@ -127,7 +127,6 @@ export class UserComponent implements AfterViewInit {
         ini.addVisible = ini.isAdd;
       }
     });
-
     d1.append($customButton[0]);
   }
 

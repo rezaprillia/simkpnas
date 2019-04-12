@@ -1,5 +1,3 @@
-import { InteractivityChecker } from "@angular/cdk/a11y";
-
 export class Search {
     npeg: string;
     nama: string;
@@ -8,7 +6,7 @@ export class Search {
     jabatan_id: string;
   }
   
-  export class SysUser {
+  export class SystemUser {
     npeg: string;
     nama: string;
     password: string;
@@ -35,6 +33,7 @@ export class Search {
     enddate: Date;
     photo_url: string;
     active: number;
+    file: File;
     registration_by: string;
     registration_date: Date;
     activation_by: string;
@@ -70,4 +69,3 @@ export class Search {
     idpos: string;
     position_title: string;
   }
-  

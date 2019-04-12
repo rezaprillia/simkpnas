@@ -10,6 +10,7 @@ import { MisiComponent } from './misi/misi.component';
 import { RolemenuComponent } from './rolemenu/rolemenu.component';
 import { OrganisasiComponent } from './organisasi/organisasi.component';
 import { SysUserComponent } from './sys-user/sys-user.component';
+import { SystemUserComponent } from './system-user/system-user.component';
 import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi.component';
 
 const routes: Routes = [
@@ -26,20 +27,7 @@ const routes: Routes = [
           title: 'Master Asset'
         }
       }, 
-      // {
-      //   path: 'users',
-      //   component: UserComponent,
-      //   data: {
-      //     title: 'Users'
-      //   }
-      // }, 
       {
-        path: 'users',
-        component: UserComponent,
-        data: {
-          title: 'Users'
-        }
-      }, {
         path: 'role',
         component: RoleComponent,
         data: {
@@ -56,6 +44,13 @@ const routes: Routes = [
       {
         path: 'users',
         component: SysUserComponent,
+        data: {
+          title: 'User'
+        }
+      },
+      {
+        path: 'user',
+        component: SystemUserComponent,
         data: {
           title: 'User'
         }

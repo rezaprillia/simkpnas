@@ -12,9 +12,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { AppConstant } from '../../../app.constant';
-import { SysUser, KategoriAktif, DaftarRole, DaftarJabatan} from './sys-user.model';
+import { SysUser, KategoriAktif, JenisPegawai, DaftarJabatan} from './sys-user.model';
 
 const simpleProducts: string[] = [ 'Y', 'N' ];
+
 const daftarKategori: KategoriAktif[] = [{
   'ID': 0,
   'Nama': 'Non-Aktif'
@@ -22,36 +23,49 @@ const daftarKategori: KategoriAktif[] = [{
   'ID': 1,
   'Nama': 'Aktif'
 }];
-const daftarRole: DaftarRole[] = [{
-  'role_id': 4,
-  'nama': 'Admin'
+
+const jenisPegawai: JenisPegawai[] = [{
+  'id': 1,
+  'jenis_pegawai': 'Aktif'
 }, {
-  'role_id': 3,
-  'nama': 'Bawahan'
+  'id': 2,
+  'jenis_pegawai': 'Dummy'
 }, {
-  'role_id': 2,
-  'nama': 'Atasan'
+  'id': 3,
+  'jenis_pegawai': 'OJT'
+}, {
+  'id': 4,
+  'jenis_pegawai': 'Tugas Belajar'
+}, {
+  'id': 5,
+  'jenis_pegawai': 'Pensiun'
+}, {
+  'id': 6,
+  'jenis_pegawai': 'Tidak Aktif'
+}, {
+  'id': 7,
+  'jenis_pegawai': 'MPP'
 }];
 
-const daftarJabatan: DaftarJabatan[] = [{
-    'idpos': '1',
-    'position_title' : 'GENERAL MANAGER'
-}, {
-    'idpos' : '2',
-    'position_title' : 'MANAGER'
-}, {
-    'idpos' : '3',
-    'position_title' : 'OFFICER'
-}, {
-    'idpos' : '4',
-    'position_title' : 'SUPERVISOR'
-}]
+// const daftarJabatan: DaftarJabatan[] = [{
+//     'idpos': '1',
+//     'position_title' : 'GENERAL MANAGER'
+// }, {
+//     'idpos' : '2',
+//     'position_title' : 'MANAGER'
+// }, {
+//     'idpos' : '3',
+//     'position_title' : 'OFFICER'
+// }, {
+//     'idpos' : '4',
+//     'position_title' : 'SUPERVISOR'
+// }]
 
-var arrRoleId = new Array()   ;
+var arrRoleId = new Array();
 
 @Injectable()
 export class SysUserService {
-  private resourceUrlUser = this.a.SERVER_URL + '/system/User';
+  private resourceUrlUser = this.a.SERVER_URL + '/system/SystemUser';
   private resourceUrlRoleAuth = this.a.SERVER_URL + '/role_menu_authorization';
   private resourceUrlMenu = this.a.SERVER_URL + '/menu_tab';
   private resourceUrlRole = this.a.SERVER_URL + '/system/UserRole';
@@ -68,17 +82,22 @@ export class SysUserService {
     return daftarKategori;
   }
 
-  getDaftarRole(): DaftarRole[] {
-    return daftarRole;
+  getJenisPegawai(): JenisPegawai[] {
+    return jenisPegawai;
   }
 
-  getDaftarJabatan(): DaftarJabatan[] {
-    return daftarJabatan;
+  // getDaftarJabatan(): DaftarJabatan[] {
+  //   return daftarJabatan;
+  // }
+
+  getAllJabatan(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(this.resourceUrlJabatan + '/keyval')
   }
 
   getById(id: any): Observable<any> {
     const token = localStorage.getItem('token');
-    return this.http.get(this.resourceUrlUser + '/retrieve?token=' + token + '&userid=' + "'" + id + "'")
+    return this.http.get(this.resourceUrlUser + '/retrieve?token=' + token + '&npeg=' + "'" + id + "'")
   }
 
   getLimit(offset,limit): Observable<any> {
@@ -133,11 +152,16 @@ export class SysUserService {
     /* data.activationCode = 'N';
     return this.http.put(this.resourceUrlRole + '/' + data.role_id, data)*/
     const token = localStorage.getItem('token');
-    return this.http.get(this.resourceUrlUser + '/delete?token=' + token + '&idpos=' + data.idpos)
+    return this.http.get(this.resourceUrlUser + '/delete?token=' + token + '&npeg=' + data.npeg)
   }
 
   getByName(roleName: any): Observable<any> {
     return this.http.get(this.resourceUrlUser + '/filter?search=roleName:' + roleName.toString().toUpperCase());
+  }
+
+  getByNpeg(npeg: any): Observable<any> {
+    // return this.http.get(this.resourceUrlSpp + '/filter?search=roleName:' + roleName.toString().toUpperCase());
+    return this.http.get(this.resourceUrlUser + '/table?npeg=' + npeg)
   }
 
   saveRoleAuth(data: any) {
@@ -162,7 +186,7 @@ export class SysUserService {
 
   getAllRole(): Observable < any > {
     return this.http.get(this.resourceUrlRole + '/table')
-  }
+  }1
 
   // getAllRoleID(): Observable < any >///////////////// {
   //   arrRoleId.push(this.http.get(this.resourceUrlRole + '/table'));
@@ -173,10 +197,6 @@ export class SysUserService {
     const token = localStorage.getItem('token');
     return this.http.get(this.resourceUrlUser + '/retrieve?token=' + token + '&role_id=' + "'" + data + "'")
     //return this.http.get(this.resourceUrlRole + '/filter?search=id:' + data);
-  }
-
-  getAllJabatan(): Observable <any> {
-    return this.http.get(this.resourceUrlJabatan + '/keyval')
   }
 
   getJabatanByID(data: any): Observable<any> {

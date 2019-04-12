@@ -1,11 +1,11 @@
 // import { Component, OnInit } from '@angular/core';
 
 // @Component({
-//   selector: 'app-sys-user',
-//   templateUrl: './sys-user.component.html',
-//   styleUrls: ['./sys-user.component.scss']
+//   selector: 'app-system-user',
+//   templateUrl: './system-user.component.html',
+//   styleUrls: ['./system-user.component.scss']
 // })
-// export class SysUserComponent implements OnInit {
+// export class SystemUserComponent implements OnInit {
 
 //   constructor() { }
 
@@ -14,74 +14,39 @@
 
 // }
 
-
-import {
-  AfterViewInit, Component, ElementRef, Inject, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Inject, ViewChild} from '@angular/core';
 import {DxDataGridComponent, DxCheckBoxComponent} from 'devextreme-angular';
-import {Search} from './sys-user.model';
-import {SysUserService} from './sys-user.service';
+import {Search, SystemUser} from './system-user.model';
+import {SystemUserService} from './system-user.service';
 import notify from 'devextreme/ui/notify';
 import {convertRuleOptions} from 'tslint/lib/configuration';
-import DataSource from 'devextreme/data/data_source';
-import data_grid from 'devextreme/ui/data_grid';
 
 declare const $: any;
 
 @Component({
-  selector: 'app-sys-user',
-  templateUrl: './sys-user.component.html',
-  styleUrls: ['./sys-user.component.scss'],
-  providers: [SysUserService]
+  selector: 'app-system-user',
+  templateUrl: './system-user.component.html',
+  styleUrls: ['./system-user.component.scss'],
+  providers: [SystemUserService]
 })
-export class SysUserComponent implements AfterViewInit {
+export class SystemUserComponent implements AfterViewInit {
   @ViewChild(DxDataGridComponent) dataGrid: DxDataGridComponent;
-  
+
   contextItems: any;
   target: any;
   addVisible = false;
   menuVisible = false;
   detail: any;
-  detailUsers: any;
   text: any;
   popupVisible = false;
   confVisible = false;
   progressVisible = false;
   progressTitle: any;
   progressContent: any;
-  roles: any[];
-  jabatans: any[];
-  entitas: any[];
 
-  //roles: any[];
+  // roles: any[];
   gridDataSource: any = {};
-  npeg: any;
-  nama: any;
-  password: any;
-  gelar: any;
-  pendidikan: any;
-  tgl_masuk: any;
-  tgl_capeg: any;
-  tgl_pegawai_tetap: any;
-  jenis_pegawai: any;
-  tgl_pensiun: any;
-  tgl_lahir: any;
-  jenis_kelamin: any;
-  gol_darah: any;
-  agama: any;
-  status: any;
-  alamat: any;
-  kota: any;
-  kodepos: any;
-  grade: any;
-  email: any;
-  posisi: any;
-  jabatan_id: any;
-  startdate: any;
-  enddate: any;
-  photo_url: any;
-  active: any;
   search: Search;
-  users: any;
   isDetail = false;
   isDelete = false;
   isCancel = false;
@@ -99,13 +64,9 @@ export class SysUserComponent implements AfterViewInit {
   maxLimitShow = 10;
   activeClass = 5;
 
-  /*popup*/
-  isShowInfo = false;
-  siteSearchVsb = false;
-
   constructor(
     private elementRef: ElementRef,
-    @Inject(SysUserService) private sysUserService: SysUserService
+    @Inject(SystemUserService) private systemUserService: SystemUserService
   ) {
     this.search = {
       npeg: '',
@@ -133,16 +94,10 @@ export class SysUserComponent implements AfterViewInit {
         disabled: false,
         beginGroup: false,
         items: false
-      },
-      {
-        text: 'Set Active / Inactive',
-        disabled: false,
-        beginGroup: false,
-        items: false
       }
     ];
 
-    this.sysUserService.getAll()
+    this.systemUserService.getAll()
     .subscribe(resp => {
       console.log(resp);
       this.gridDataSource = resp.d.list;
@@ -150,31 +105,8 @@ export class SysUserComponent implements AfterViewInit {
       console.log(err);
     })
 
-    sysUserService.getAllRole().subscribe(resp => {
-      this.roles = resp;
-    });
-
-    sysUserService.getAllJabatan().subscribe(resp => {
-      console.log(resp);
-      this.jabatans = resp;
-    });
-
-    // roleService.getAllEntitas().subscribe(resp => {
-    //   this.entitas = resp;
-    // })
-
 
     // this.getRoleData();
-  }
-
-  calculateCellValue(data) {
-    if (data.status === 'A') {
-      return 'ACTIVE'
-    } else if (data.status === 'I') {
-      return 'INACTIVE'
-    } else if (data.status === 'R') {
-      return 'REGISTER'
-    }
   }
 
   //pagination
@@ -225,7 +157,7 @@ export class SysUserComponent implements AfterViewInit {
       this.maxLimitShow = Number(this.page);
     }
     
-    this.sysUserService.getLimit(this.offset,this.limitVal)
+    this.systemUserService.getLimit(this.offset,this.limitVal)
     .subscribe(resp => {
       console.log(resp);
       this.gridDataSource = resp.d.list;
@@ -237,7 +169,7 @@ export class SysUserComponent implements AfterViewInit {
   //end pagination
 
   refresh() {
-    this.sysUserService.getAll().subscribe(resp => {
+    this.systemUserService.getAll().subscribe(resp => {
       this.gridDataSource = resp.d.list;
     }, err => {
       console.log(err);
@@ -248,8 +180,8 @@ export class SysUserComponent implements AfterViewInit {
   getRoleData() {
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
-    this.sysUserService.getAll().subscribe(resp => {
-      this.sysUserService.getAllRoleAuth().subscribe(respAuth => {
+    this.systemUserService.getAll().subscribe(resp => {
+      this.systemUserService.getAllRoleAuth().subscribe(respAuth => {
         resp.forEach((value, index) => {
           const menus = [];
           const menu = respAuth.filter(element => {
@@ -303,109 +235,30 @@ export class SysUserComponent implements AfterViewInit {
   }
 
   searching() {
-    this.sysUserService.getByName(this.search.nama).subscribe(resp => {
-      this.sysUserService.getAllRoleAuth().subscribe(respAuth => {
-        resp.forEach((value, index) => {
-          const menus = [];
-          const menu = respAuth.filter(element => {
-            return element.userRole.id === value.id;
-          });
-
-          if (Array.isArray(menu)) {
-            menu.forEach(menuItem => {
-              menus.push(menuItem.menuTab.menuDesciption.toString());
-            });
-          } else {
-            if (typeof menu !== 'undefined') {
-              menus.push(menu.menuTab.menuDesciption.toString());
-            }
-          }
-
-          resp[index].menu = menus;
-        })
-      });
-      if (this.search.npeg !== null) {
-        this.gridDataSource = resp.filter(role => role.roleName === this.search.npeg).filter(data => data.activationCode === 'Y');
-      } else {
-        this.gridDataSource = resp.filter(data => data.activationCode === 'Y');
-      }
+    console.log(this.search.npeg);
+    this.systemUserService.getByName(this.search.npeg).subscribe(resp => {
+      console.log(resp);
+        
+          this.pagination();
+      // if (this.search.npeg !== '') {
+      //   this.gridDataSource = resp.filter(role => role.roleName === this.search.npeg).filter(data => data.activationCode === 'Y');
+      // } else {
+      //   this.gridDataSource = resp.filter(data => data.activationCode === 'Y');
+      // }
     });
   }
 
   advSearch() {
-    this.sysUserService.getByData(this.search).subscribe(resp => {
-      this.sysUserService.getAllRoleAuth().subscribe(respAuth => {
-        resp.forEach((value, index) => {
-          const menus = [];
-          const menu = respAuth.filter(element => {
-            return element.userRole.id === value.id;
-          });
-
-          if (Array.isArray(menu)) {
-            menu.forEach(menuItem => {
-              menus.push(menuItem.menuTab.menuDesciption.toString());
-            });
-          } else {
-            if (typeof menu !== 'undefined') {
-              menus.push(menu.menuTab.menuDesciption.toString());
-            }
-          }
-
-          resp[index].menu = menus;
-        })
-      });
-      if (this.search.npeg !== '') {
-        this.gridDataSource = resp.filter(role => role.role_id === this.search.npeg).filter(data => data.activationCode === 'Y');
-      } else {
-        this.gridDataSource = resp.filter(data => data.activationCode === 'Y');
-      }
-    });
+    this.isAdv = !this.isAdv;
+    this.chevron = 'chevrondown';
+    this.pagination();
   }
 
   showMenu(event): void {
     this.target = event;
     this.menuVisible = true;
-    //this.detail = this.gridDataSource.filter(dataSource => dataSource.id === event)[0];
-    this.detailUsers = this.gridDataSource.filter(dataSource => dataSource.id === event)[0];
-    
-    // this.sysUserService.getSiteByID(this.detailUsers.siteCode)
-    // .subscribe( resp => {
-    //   this.detailUsers.site = resp[0];
-    // })
-    // this.sysUserService.getRoleByID(this.detailUsers.npeg)
-    // .subscribe( resp => {
-    //   this.detailUsers.npeg = resp[0];
-    // })
-    // this.sysUserService.getLanguageByID(this.detailUsers.languageDefaultId)
-    // .subscribe( resp => {
-    //   this.detailUsers.bahasa = resp[0];
-    // })
-    // this.sysUserService.getJabatanByID(this.detailUsers.idpos)
-    // .subscribe( resp => {
-    //   this.detailUsers.jabatan_id = resp[0];
-    // })
-    // this.sysUserService.getEntitasByID(this.detailUsers.idorg)
-    // .subscribe( resp => {
-    //   this.detailUsers.entitas_id = resp[0];
-    // })
-
-    // if (this.detailUsers.status === 'A') {
-    //   this.detailUsers.statususer = 'ACTIVE'
-    // } else if (this.detailUsers.status === 'I') {
-    //   this.detailUsers.statususer = 'INACTIVE'
-    // } else if (this.detailUsers.status === 'R') {
-    //   this.detailUsers.statususer = 'REGISTER'
-    // }
-
-    // if (this.detail.status === 'A') {
-    //   this.contextItems[3].text = 'Set Inactive';
-    // } else if (this.detail.status === 'I') {
-    //   this.contextItems[3].text = 'Set Active';
-    // } else if (this.detail.status === 'R') {
-    //   this.contextItems[3].status = 'Set Active';
-    // }
-
-    console.log(this.detailUsers)
+    this.detail = this.gridDataSource.filter(dataSource => dataSource.id === event)[0];
+    console.log(this.detail);
   }
 
   itemClick(e) {
@@ -424,7 +277,6 @@ export class SysUserComponent implements AfterViewInit {
         this.confVisible = true;
         this.isCancel = false;
       }
-      
     }
   }
 
@@ -439,10 +291,6 @@ export class SysUserComponent implements AfterViewInit {
 
   onHideMenu() {
     this.menuVisible = false;
-  }
-
-  onHidePopup() {
-    this.popupVisible = false;
   }
 
   onHideConf() {
@@ -460,7 +308,6 @@ export class SysUserComponent implements AfterViewInit {
     this.addVisible = false;
     this.isAdd = false;
     this.isEdit = false;
-    this.target = null;
     this.isDetail = false;
     this.target = null;
     this.refresh();
@@ -474,8 +321,8 @@ export class SysUserComponent implements AfterViewInit {
   }
 
   onDeleteConf() {
-    this.sysUserService.getById(this.target).subscribe(role => {
-      this.sysUserService.delete(role.d).subscribe(resp => {
+    this.systemUserService.getById(this.target).subscribe(role => {
+      this.systemUserService.delete(role.d).subscribe(resp => {
         // this.getRoleData();
         notify({
           closeOnClick: true,

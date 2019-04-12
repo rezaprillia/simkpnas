@@ -67,6 +67,8 @@ import { PosisiOrganisasiComponent } from './posisi-organisasi/posisi-organisasi
 import { SysUserComponent } from './sys-user/sys-user.component';
 import { SysUserAddComponent } from './sys-user/sys-user-add/sys-user-add.component';
 import { DetailSysUserComponent } from './sys-user/sys-user-detail/sys-user-detail.component';
+import { SystemUserComponent } from './system-user/system-user.component';
+import { SystemUserAddComponent } from './system-user/system-user-add/system-user-add.component';
 
 @NgModule({
   imports: [
@@ -116,7 +118,9 @@ import { DetailSysUserComponent } from './sys-user/sys-user-detail/sys-user-deta
     PosisiOrganisasiComponent,
     SysUserComponent,
     SysUserAddComponent,
-    DetailSysUserComponent
+    DetailSysUserComponent,
+    SystemUserComponent,
+    SystemUserAddComponent
   ],
   exports: [
   ],

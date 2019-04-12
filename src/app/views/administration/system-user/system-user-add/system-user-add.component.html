@@ -1,7 +1,7 @@
 <div *ngIf="addVisible">
-  <form action="Submit" (submit)="save($event)">
+  <form action="Submit" (submit)="save($event)" enctype="multipart/form-data">
     <dx-button *ngIf="!isDetail" icon="fa fa-ban" text="Cancel" (onClick)="cancel()"></dx-button>
-    <dx-button *ngIf="!isDetail" class="pull-right" icon="fa fa-save" text="Save" validationGroup="userData" [useSubmitBehavior]="true">
+    <dx-button *ngIf="!isDetail" class="pull-right" icon="fa fa-save" text="Save" validationGroup="userData" [useSubmitBehavior]="true" type="success" (onClick)="insert()">
     </dx-button>
 
     <div class="m-2"></div>
@@ -74,8 +74,8 @@
         </dxi-item>
         <dxi-item itemType="group">
           <dxi-item dataField="grade" editorType="dxSelectBox" [editorOptions]="{items: ['Specific1', 'Specific2'], value:'grade'}">            
-                <dxo-label text="Grade"></dxo-label>
-                <!--<dxi-validation-rule type="required" message="ID Jabatan is required"></dxi-validation-rule>-->
+          <dxo-label text="Grade"></dxo-label>
+          <!--<dxi-validation-rule type="required" message="ID Jabatan is required"></dxi-validation-rule>-->
           </dxi-item>
           <dxi-item dataField="alamat"><dxo-label text="Alamat"></dxo-label></dxi-item>
           <dxi-item dataField="kota"><dxo-label text="Kota/Kab."></dxo-label></dxi-item>
@@ -95,14 +95,14 @@
             <dxo-label text="Photo"></dxo-label>
           </dxi-item>
         </dxi-item>
-        <dxi-item dataField="status" editorType="dxCheckBox">
+        <dxi-item dataField="active" editorType="dxCheckBox" hint="Status">
           <dxo-label text="Active"></dxo-label>
         </dxi-item>
         </dxi-item>
       </dxi-item>
       <div *dxTemplate="let data of 'photoTemplate'">
         <img src="" onError="this.src='/assets/img/default.png'" width="150px" height="150px" class="form-avatar" />
-        <dx-file-uploader name="file" uploadMode="useForm" uploadUrl="" selectButtonText="Upload Photo" [multiple]="false"
+        <dx-file-uploader dataField="file" name="file" uploadMode="useForm" selectButtonText="Upload Photo" [multiple]="false"
           labelText="">
         </dx-file-uploader>
       </div>
