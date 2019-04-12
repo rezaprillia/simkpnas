@@ -26,8 +26,31 @@ const routes: Routes = [
         data: {
           title: 'Master Asset'
         }
+      }, {
+        path: 'users',
+        component: UserComponent,
+        data: {
+          title: 'Users'
+        }
+      },
+      {
+        path: 'users',
+        component: SysUserComponent,
+        data: {
+          title: 'Users'
+        }
       }, 
       {
+<<<<<<< HEAD
+=======
+        path: 'users',
+        component: UserComponent,
+        data: {
+          title: 'Users'
+        }
+      }, 
+      {
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
         path: 'role',
         component: RoleComponent,
         data: {

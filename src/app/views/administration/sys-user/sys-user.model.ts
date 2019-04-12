@@ -60,14 +60,17 @@ export class Search {
     ID: number;
     Nama: string;
   }
+<<<<<<< HEAD
 
   export class JenisPegawai {
     id: number;
     jenis_pegawai: string;
   }
+=======
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
 
-  export class DaftarJabatan {
-    idpos: string;
-    position_title: string;
-  }
+  // export class DaftarJabatan {
+  //   idpos: string;
+  //   position_title: string;
+  // }
   

@@ -9,7 +9,6 @@ import {
 } from './containers';
 import { ExecutiveComponent } from 'app/views/dashboard/executive/executive.component';
 import { MonitoringComponent } from 'app/views/dashboard/monitoring/monitoring.component';
-import { UploadComponent } from 'app/views/upload/upload.component';
 
 export const routes: Routes = [
   {

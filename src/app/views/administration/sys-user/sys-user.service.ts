@@ -12,7 +12,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { AppConstant } from '../../../app.constant';
+<<<<<<< HEAD
 import { SysUser, KategoriAktif, JenisPegawai, DaftarJabatan} from './sys-user.model';
+=======
+import { SysUser, KategoriAktif} from './sys-user.model';
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
 
 const simpleProducts: string[] = [ 'Y', 'N' ];
 
@@ -24,6 +28,7 @@ const daftarKategori: KategoriAktif[] = [{
   'Nama': 'Aktif'
 }];
 
+<<<<<<< HEAD
 const jenisPegawai: JenisPegawai[] = [{
   'id': 1,
   'jenis_pegawai': 'Aktif'
@@ -46,6 +51,32 @@ const jenisPegawai: JenisPegawai[] = [{
   'id': 7,
   'jenis_pegawai': 'MPP'
 }];
+=======
+// const daftarRole: DaftarRole[] = [{
+//   'role_id': 4,
+//   'nama': 'Admin'
+// }, {
+//   'role_id': 3,
+//   'nama': 'Bawahan'
+// }, {
+//   'role_id': 2,
+//   'nama': 'Atasan'
+// }];
+
+// const daftarJabatan: DaftarJabatan[] = [{
+//     'idpos': '1',
+//     'position_title' : 'GENERAL MANAGER'
+// }, {
+//     'idpos' : '2',
+//     'position_title' : 'MANAGER'
+// }, {
+//     'idpos' : '3',
+//     'position_title' : 'OFFICER'
+// }, {
+//     'idpos' : '4',
+//     'position_title' : 'SUPERVISOR'
+// }]
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
 
 // const daftarJabatan: DaftarJabatan[] = [{
 //     'idpos': '1',
@@ -82,18 +113,27 @@ export class SysUserService {
     return daftarKategori;
   }
 
+<<<<<<< HEAD
   getJenisPegawai(): JenisPegawai[] {
     return jenisPegawai;
   }
+=======
+  // getDaftarRole(): DaftarRole[] {
+  //   return daftarRole;
+  // }
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
 
   // getDaftarJabatan(): DaftarJabatan[] {
   //   return daftarJabatan;
   // }
+<<<<<<< HEAD
 
   getAllJabatan(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(this.resourceUrlJabatan + '/keyval')
   }
+=======
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
 
   getById(id: any): Observable<any> {
     const token = localStorage.getItem('token');

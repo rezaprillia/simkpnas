@@ -108,11 +108,19 @@ export class SysUserComponent implements AfterViewInit {
     @Inject(SysUserService) private sysUserService: SysUserService
   ) {
     this.search = {
+<<<<<<< HEAD
       npeg: '',
       nama: '',
       email: '',
       posisi: '',
       jabatan_id: ''
+=======
+      'npeg': '',
+      'nama': '',
+      'email': '',
+      'posisi': '',
+      'jabatan_id': ''
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
     };
 
     this.contextItems = [
@@ -354,7 +362,11 @@ export class SysUserComponent implements AfterViewInit {
           resp[index].menu = menus;
         })
       });
+<<<<<<< HEAD
       if (this.search.npeg !== '') {
+=======
+      if (this.search.npeg !== null) {
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
         this.gridDataSource = resp.filter(role => role.role_id === this.search.npeg).filter(data => data.activationCode === 'Y');
       } else {
         this.gridDataSource = resp.filter(data => data.activationCode === 'Y');

@@ -1,0 +1,222 @@
+<div  class="content-block">
+  <div class="dx-card responsive-paddings">
+      <div>
+          <table id="tableTemplate">
+              <tr>
+                  <td>Data Pegawai</td>
+                  <td>
+                      <button>Download Template</button>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Struktur Ogranisasi</td>
+                  <td>
+                      <button>Download Template</button>
+                  </td>
+              </tr>
+          </table>
+      </div>
+      <br>
+      <div id="content">
+          <table id="tableForm">
+              <tr>
+                  <td>Direktorat/Unit</td>
+                  <td>:</td>
+                  <td>
+                      <div class="dx-fieldset">
+                          <div class="dx-field" style="width:100%">
+                              <dx-select-box [dataSource]="direktorat" showClearButton="true"></dx-select-box>
+                          </div>
+                      </div>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Periode</td>
+                  <td>:</td>
+                  <td>
+                      <select name="bulan" id="bulan">
+                          <option value="januari">Januari</option>
+                          <option value="feburari">Feburari</option>
+                          <option value="maret">Maret</option>
+                          <option value="april">April</option>
+                          <option value="mei">Mei</option>
+                          <option value="juni">Juni</option>
+                          <option value="juli">Juli</option>
+                          <option value="agustus">Agustus</option>
+                          <option value="september">September</option>
+                          <option value="oktober">Oktober</option>
+                          <option value="november">November</option>
+                          <option value="desember">Desember</option>
+                      </select>
+                      <select name="tahun" id="tahun">
+                          <option value="2019">2019</option>
+                          <option value="2020">2020</option>
+                          <option value="2021">2021</option>
+                          <option value="2022">2022</option>
+                          <option value="2023">2023</option>
+                          <option value="2024">2024</option>
+                          <option value="2025">2025</option>
+                          <option value="2026">2026</option>
+                          <option value="2027">2027</option>
+                          <option value="2028">2028</option>
+                          <option value="2029">2029</option>
+                          <option value="2030">2030</option>
+                          <option value="2031">2031</option>
+                          <option value="2032">2032</option>
+                          <option value="2033">2033</option>
+                          <option value="2034">2034</option>
+                          <option value="2035">2035</option>
+                      </select>
+                  </td>
+              </tr>
+              <tr>
+                  <td>Jenis Upload</td>
+                  <td>:</td>
+                  <td>
+                      <div class="dx-fieldset">
+                          <div class="dx-field" style="width:100%">
+                              <dx-select-box [dataSource]="jenisUpload" showClearButton="true"></dx-select-box>
+                          </div>
+                      </div>
+                  </td>
+              </tr>
+              <tr>
+                  <td>File data pegawai</td>
+                  <td>:</td>
+                  <td>
+                      <input type="file" style="display: inline-block;" (change)="onFileChanged($event)" placeholder="Upload file" accept=".xlsx">
+                  </td>
+              </tr>
+              <tr>
+                  <td>File struktur organisasi</td>
+                  <td>:</td>
+                  <td>
+                      <input type="file" style="display: inline-block;" (change)="onFileChanged2($event)" placeholder="Upload file" accept=".xlsx">
+                  </td>
+                  <td>
+                      <dx-button
+                          type="default"
+                          text="Proses"
+                          (onClick)="onUpload()">
+                      </dx-button>
+                  </td>
+              </tr>
+          </table>
+          <br>
+          <div id="contentOut">
+              <p><b>Jumlah data di template</b></p>
+              <table id="tableOutput">
+                  <tr id="tR">
+                      <td id=tD></td>
+                      <td id=tD align="center">Data</td>
+                      <td id=tD align="center">Jumlah</td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td id="tD">Total Pegawai</td>
+                      <td id="tD">{{totalPegawai}}</td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td id="tD">Pegawai Aktif</td>
+                      <td id="tD">{{pegawaiAktif}}</td>
+                  </tr>
+                  <tr>
+                      <td align="center">Pegawai</td>
+                      <td id="tD">Pegawai Tidak Aktif</td>
+                      <td id="tD">{{pegawaiNonAktif}}</td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td id="tD">Pegawai di Organisasi (belum dummy)</td>
+                      <td id="tD">{{pegawaiOrganisai}}</td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td id="tD">Pegawai dummy</td>
+                      <td id="tD">{{pegawaiDummy}}</td>
+                  </tr>
+                  <tr id="tR">
+                      <td id="tD" colspan="2">Posisi</td>
+                      <td id="tD"></td>
+                  </tr>
+                  <tr id="tR">
+                      <td id="tD" colspan="2">Jabatan</td>
+                      <td id="tD"></td>
+                  </tr>
+              </table>
+              <br>
+              <p><b>Jumlah yang tersimpan</b></p>
+              <table id="tableOutput">
+                  <tr id="tR">
+                      <td align="center" id="tD">Jumlah</td>
+                      <td align="center" id="tD">Pegawai</td>
+                      <td align="center" id="tD">Posisi</td>
+                      <td align="center" id="tD">Jabatan</td>
+                      <td align="center" id="tD">Error Referensi Jabatan</td>
+                  </tr>
+                  <tr id="tR">
+                      <td id="tD">Error Data</td>
+                      <td id="tD">{{pegawaiError}}</td>
+                      <td id="tD">{{posisiError}}</td>
+                      <td id="tD">{{jabatanError}}</td>
+                      <td id="tD">{{referensiError}}</td>
+                  </tr>
+                  <tr id="tR">
+                      <td id="tD">Insert Data</td>
+                      <td id="tD">{{pegawaiInsert}}</td>
+                      <td id="tD">{{posisiInsert}}</td>
+                      <td id="tD">{{jabatanInsert}}</td>
+                      <td id="tD">{{referensiInsert}}</td>
+                  </tr>
+                  <tr id="tR">
+                      <td id="tD">Update Data</td>
+                      <td id="tD">{{pegawaiUpdate}}</td>
+                      <td id="tD">{{posisiUpdate}}</td>
+                      <td id="tD">{{jabatanUpdate}}</td>
+                      <td id="tD">{{referensiUpdate}}</td>
+                  </tr>
+                  <tr id="tR">
+                      <td id="tD">Total Data</td>
+                      <td id="tD">{{pegawaiTotal}}</td>
+                      <td id="tD">{{posisiTotal}}</td>
+                      <td id="tD">{{jabatanTotal}}</td>
+                      <td id="tD">{{referensiTotal}}</td>
+                  </tr>
+              </table>
+              <br>
+              Data yang tidak dapat disimpan <br>
+              <ol>
+                  <li *ngFor="let kodes of kode">{{kodes}}</li>
+              </ol>
+              <div>
+                  <dx-button
+                      type="success"
+                      text="OK"
+                      (onClick)="okClick()">
+                  </dx-button>
+                  <dx-button
+                      type="danger"
+                      text="Close"
+                      (onClick)="closeClick()">
+                  </dx-button>
+              </div>
+          </div>
+          <div id="notes">
+              <br>
+              <h3 id="isinote">NOTES:</h3>
+              1. Position Organisasi dan Pegawai : digunakan untuk create data posisi SIMKP yang berasal dari data SAP.
+              <br>Cara meng-uploadnya dengan melampirkan 2 template yaitu template organisasi dan templat pegawai.
+              Data organisasi yang diupload akan menjadi data organisasi yang terbaru, jika ada posisi dan jabatan yang
+              lama tidak terdata di template maka enddate posisi dan jabatan lama akan otomatis berakhir sesuai periode upload.
+              <br> <br>
+              2. Saat upload pastikan kolom sesuai dengan template yang disediakan system ini dan Nama Sheet harus Sheet1 dan kode SAP di kolom J.
+              <br><br>
+              3. File hasil Download-an dari SAP harap dicopy - paste ke excel baru setelah itu Save As 2003.
+              <br><br>
+              4. Tipe Data Startdate dan Enddate di template data pegawai harus bertipe Date.
+          </div>
+      </div>
+      <hr/>
+  </div>
+</div>

@@ -20,13 +20,22 @@ import {
   Input,
   Output,
   EventEmitter, OnInit, AfterViewInit, ViewChild, ViewChildren, QueryList, ContentChildren, AfterContentChecked, AfterContentInit
+<<<<<<< HEAD
 } from '@angular/core';
 import { SysUserService } from '../sys-user.service';
 import { Menu, SysUser, KategoriAktif, JenisPegawai, DaftarJabatan } from '../sys-user.model';
+=======
+ } from '@angular/core';
+import {SysUserService} from '../sys-user.service';
+// import { AddRoleService } from './role-add.service';
+
+import {Menu, SysUser, KategoriAktif} from '../sys-user.model';
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
 import notify from 'devextreme/ui/notify';
 import { DxTreeListComponent, DxValidatorModule, DxValidationSummaryModule, DxFormComponent } from 'devextreme-angular';
 import { DxiItemComponent } from 'devextreme-angular/ui/nested/item-dxi';
 
+<<<<<<< HEAD
 @Component({
   selector: 'app-add-sys-user',
   templateUrl: './sys-user-add.component.html',
@@ -88,6 +97,56 @@ export class SysUserAddComponent implements OnInit, AfterViewInit, AfterContentI
 
     this.user = {
       npeg: '',
+=======
+ @Component({
+   selector: 'app-add-sys-user',
+   templateUrl: './sys-user-add.component.html',
+   providers: []
+ })
+ export class SysUserAddComponent implements OnInit, AfterViewInit, AfterContentInit {
+   @Input() isEdit;
+   @Input() isDetail;
+   @Input() editItem;
+   @Input() addVisible;
+   @Output() onHideAdd = new EventEmitter();
+   @ViewChild(DxTreeListComponent) treeList: DxTreeListComponent;
+   @ViewChild(DxFormComponent) formAktif: DxFormComponent;
+   @ViewChildren(DxiItemComponent) kontrols: QueryList<DxiItemComponent>;
+   @ContentChildren(DxiItemComponent) kontens: QueryList<DxiItemComponent>;
+
+   user: SysUser;
+   isallowregistration: boolean;
+   simpleProducts: string[];
+   jabatans: any;
+   daftarKategori: KategoriAktif[];
+   //daftarRole: DaftarRole[];
+   //daftarJabatan: DaftarJabatan[];
+   // cekAktif: boolean;
+   previousValue: boolean;
+   newValue: boolean;
+
+   menuTree: Menu[] = [];
+
+   confVisible = false;
+   isSave = false;
+   isCancel = false;
+
+   options = {
+     message: '',
+     closeOnOutsideClick: true,
+     closeOnClick: true,
+     closeOnSwipe: true,
+     closeOnBackButton: true,
+   };
+
+   constructor(private sysUserService: SysUserService) {
+     this.simpleProducts = sysUserService.getSimpleProducts();
+     this.daftarKategori = sysUserService.getDaftarKategori();
+     //this.daftarRole = sysUserService.getDaftarRole();
+     //this.daftarJabatan = sysUserService.getDaftarJabatan();
+     this.user = {
+      npeg: null,
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
       nama: '',
       password: '',
       gelar: '',
@@ -174,6 +233,7 @@ export class SysUserAddComponent implements OnInit, AfterViewInit, AfterContentI
       })
     } else { // New Record
       this.user = {
+<<<<<<< HEAD
         npeg: null,
         nama: null,
         password: null,
@@ -209,6 +269,43 @@ export class SysUserAddComponent implements OnInit, AfterViewInit, AfterContentI
         modified_by: null,
         modified_date: null,
         activation_code: null
+=======
+          npeg: null,
+          nama: null,
+          password: null,
+          gelar: null,
+          pendidikan: null,
+          tgl_masuk: null,
+          tgl_capeg: null,
+          tgl_pegawai_tetap: null,
+          jenis_pegawai: null,
+          tgl_pensiun: null,
+          tgl_lahir: null,
+          jenis_kelamin: null,
+          gol_darah: null,
+          agama: null,
+          status: null,
+          alamat: null,
+          kota: null,
+          kodepos: null,
+          grade: null,
+          email: null,
+          posisi: null,
+          jabatan_id: null,
+          startdate: null,
+          enddate: null,
+          photo_url: null,
+          active: null,
+          registration_by: null,
+          registration_date: null,
+          activation_by: null,
+          activation_date: null,
+          deactivation_by: null,
+          deactivation_date: null,
+          modified_by: null,
+          modified_date: null,
+          activation_code: null
+>>>>>>> 52e6a4eae9d88ac8ac37fe96c5ca8856f5cac55a
       };
 
       // this.treeList.instance.refresh();
